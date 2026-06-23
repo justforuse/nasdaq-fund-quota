@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { ChevronDown, ChevronUp, ExternalLink } from 'lucide-react';
-import { Fund } from '../types/fund';
-import { formatReturn, getReturnColor } from '../utils/format';
+import { Fund, statusLabels } from '../types/fund';
+import { formatCurrency, formatReturn, getReturnColor, getStatusColor } from '../utils/format';
 import { FundDetail } from './FundDetail';
 import { cn } from '../lib/utils';
 
@@ -28,10 +28,18 @@ export const FundCard = ({ fund }: FundCardProps) => {
             <h3 className="text-white font-medium text-base leading-tight truncate">
               {fund.name}
             </h3>
-            <div className="flex items-center gap-2 mt-2">
+            <div className="flex flex-wrap items-center gap-2 mt-2">
               <code className="text-gray-400 font-mono text-xs bg-dark-bg px-2 py-1 rounded">
                 {fund.code}
               </code>
+              <span
+                className={cn(
+                  'inline-flex items-center px-2 py-0.5 text-xs font-medium rounded-lg border',
+                  getStatusColor(fund.limitStatus)
+                )}
+              >
+                {statusLabels[fund.limitStatus]}
+              </span>
               {fund.estimatedChange !== undefined && (
                 <span className={cn(
                   'inline-flex items-center px-2 py-0.5 text-xs font-medium rounded-lg',
@@ -50,25 +58,38 @@ export const FundCard = ({ fund }: FundCardProps) => {
           </div>
         </div>
         
-        <div className="mt-4 pt-4 border-t border-dark-border/50 flex items-center justify-between">
+        <div className="mt-4 pt-4 border-t border-dark-border/50 space-y-2">
+          <div className="flex items-center justify-between">
+            <div className="text-sm">
+              {fund.limitStatus === 'limited' ? (
+                <span className="text-warning-500 font-medium">
+                  单日限额 {formatCurrency(fund.limitAmount)}
+                </span>
+              ) : fund.limitStatus === 'unlimited' ? (
+                <span className="text-success-500 font-medium">无限制</span>
+              ) : (
+                <span className="text-danger-500 font-medium">暂停申购</span>
+              )}
+            </div>
+            <div className="flex items-center gap-1 text-xs text-gray-500">
+              <span>{expanded ? '收起' : '展开'}</span>
+              {expanded ? (
+                <ChevronUp className="w-4 h-4" />
+              ) : (
+                <ChevronDown className="w-4 h-4" />
+              )}
+            </div>
+          </div>
           <a
             href={`http://fundf10.eastmoney.com/jjgg_${fund.code}.html`}
             target="_blank"
             rel="noopener noreferrer"
             onClick={(e) => e.stopPropagation()}
-            className="inline-flex items-center gap-1 text-primary-400 hover:text-primary-300 text-sm font-medium transition-colors"
+            className="inline-flex items-center gap-1 text-primary-400 hover:text-primary-300 text-xs font-medium transition-colors"
           >
-            查看限额公告
-            <ExternalLink className="w-3.5 h-3.5" />
+            查看公告详情
+            <ExternalLink className="w-3 h-3" />
           </a>
-          <div className="flex items-center gap-1 text-xs text-gray-500">
-            <span>{expanded ? '收起' : '展开'}</span>
-            {expanded ? (
-              <ChevronUp className="w-4 h-4" />
-            ) : (
-              <ChevronDown className="w-4 h-4" />
-            )}
-          </div>
         </div>
       </div>
       

@@ -42,9 +42,16 @@ export const Footer = () => {
               <div className="text-sm text-gray-400">
                 <p className="font-medium text-gray-300 mb-1">限额数据说明</p>
                 <p>
-                  基金限额信息没有统一的公开 API，实际限额以
-                  <span className="text-primary-400 font-medium">基金公司官方公告</span>
-                  为准。点击"查看公告"链接可跳转到天天基金网的基金公告页面。
+                  基金限额信息来自天天基金网
+                  <a
+                    href="http://fund.eastmoney.com/Fund_sgzt_bzdm.html"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-primary-400 hover:text-primary-300 underline mx-1"
+                  >
+                    基金申购状态
+                  </a>
+                  公开数据，包含申购状态、日累计限购金额等信息。点击"查看公告"可查看基金公司官方公告。
                   近一年涨幅数据为历史业绩，不代表未来表现。
                 </p>
               </div>

@@ -1,4 +1,5 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
+import type { Fund, FundLimitStatus } from '../../src/types/fund';
 
 const NASDAQ_FUND_CODES = [
   '270042',
@@ -15,7 +16,6 @@ const NASDAQ_FUND_CODES = [
   '004903',
   '007800',
   '013308',
-  '050025',
 ];
 
 interface FundBaseInfo {
@@ -94,8 +94,8 @@ const FUND_BASE_INFO: Record<string, FundBaseInfo> = {
   },
   '159659': {
     code: '159659',
-    name: '华夏纳斯达克100ETF',
-    company: '华夏基金管理有限公司',
+    name: '招商纳斯达克100ETF',
+    company: '招商基金管理有限公司',
     establishDate: '2022-07-20',
     fundSize: 98.56,
     fundType: 'ETF-场内',
@@ -155,15 +155,189 @@ const FUND_BASE_INFO: Record<string, FundBaseInfo> = {
     fundType: 'QDII指数型',
     riskLevel: 'R4中高风险',
   },
-  '050025': {
-    code: '050025',
-    name: '博时标普500指数(QDII)',
-    company: '博时基金管理有限公司',
-    establishDate: '2012-06-14',
-    fundSize: 38.92,
-    fundType: 'QDII指数型',
-    riskLevel: 'R4中高风险',
-  },
+};
+
+const UNLIMITED_THRESHOLD = 800000000;
+const DEFAULT_HEADERS = {
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+};
+
+const parseNumeric = (val: string | null): number | null => {
+  if (!val || val.trim() === '' || val === '---') {
+    return null;
+  }
+  const num = parseFloat(val);
+  return isNaN(num) ? null : num;
+};
+
+const fetchWithTimeout = async (url: string, options: RequestInit, timeout = 15000): Promise<Response> => {
+  const controller = new AbortController();
+  const timeoutId = setTimeout(() => controller.abort(), timeout);
+  try {
+    const response = await fetch(url, { ...options, signal: controller.signal });
+    return response;
+  } finally {
+    clearTimeout(timeoutId);
+  }
+};
+
+const determineLimitStatus = (
+  purchaseStatus: string,
+  dailyLimit: number | null,
+  isUnlimited: boolean,
+  isSuspended: boolean
+): { status: FundLimitStatus; amount: number | undefined; note: string } => {
+  if (isSuspended || purchaseStatus === '暂停申购' || purchaseStatus === '停止申购') {
+    return { status: 'suspended', amount: undefined, note: '暂停申购' };
+  }
+  if (isUnlimited) {
+    return { status: 'unlimited', amount: undefined, note: '无限制' };
+  }
+  if (dailyLimit !== null && dailyLimit > 0 && dailyLimit < UNLIMITED_THRESHOLD) {
+    return { status: 'limited', amount: dailyLimit, note: `单日限额 ${dailyLimit.toLocaleString()} 元` };
+  }
+  return { status: 'unlimited', amount: undefined, note: '无限制' };
+};
+
+const fetchRealtimeData = async (code: string): Promise<any | null> => {
+  try {
+    const apiResponse = await fetchWithTimeout(
+      `http://fundgz.1234567.com.cn/js/${code}.js`,
+      {
+        headers: {
+          ...DEFAULT_HEADERS,
+          Referer: 'http://fund.eastmoney.com/',
+        },
+      },
+      8000
+    );
+
+    if (!apiResponse.ok) return null;
+    const text = await apiResponse.text();
+    
+    const jsonMatch = text.match(/jsonpgz\((.*)\);/);
+    if (!jsonMatch || !jsonMatch[1]) return null;
+
+    const data = JSON.parse(jsonMatch[1]);
+    return {
+      code: data.fundcode,
+      name: data.name,
+      netValueDate: data.jzrq,
+      netValue: parseFloat(data.dwjz),
+      estimatedValue: parseFloat(data.gsz),
+      estimatedChange: parseFloat(data.gszzl),
+      updateTime: data.gztime,
+    };
+  } catch (error) {
+    console.error(`获取实时数据失败 ${code}:`, error);
+    return null;
+  }
+};
+
+const fetchDetailData = async (code: string): Promise<any | null> => {
+  try {
+    const apiResponse = await fetchWithTimeout(
+      `http://fund.eastmoney.com/pingzhongdata/${code}.js`,
+      {
+        headers: {
+          ...DEFAULT_HEADERS,
+          Referer: `http://fund.eastmoney.com/${code}.html`,
+        },
+      },
+      8000
+    );
+
+    if (!apiResponse.ok) return null;
+    const text = await apiResponse.text();
+
+    const extractValue = (pattern: string): string => {
+      const regex = new RegExp(`var ${pattern}\\s*=\\s*"([^"]*)"`, 'i');
+      const match = text.match(regex);
+      return match ? match[1] : '';
+    };
+
+    return {
+      name: extractValue('fS_name'),
+      code: extractValue('fS_code'),
+      sourceRate: parseFloat(extractValue('fund_sourceRate')) || 0,
+      rate: parseFloat(extractValue('fund_Rate')) || 0,
+      minPurchase: parseFloat(extractValue('fund_minsg')) || 0,
+      oneYearReturn: parseFloat(extractValue('syl_1n')) || 0,
+    };
+  } catch (error) {
+    console.error(`获取详细数据失败 ${code}:`, error);
+    return null;
+  }
+};
+
+const fetchLimitData = async (codes: string[]): Promise<Record<string, any>> => {
+  try {
+    const apiUrl = `http://fund.eastmoney.com/Data/Fund_JJJZ_Data.aspx?t=8&page=1,500&js=var%20reData&sort=fcode,asc`;
+    
+    const apiResponse = await fetchWithTimeout(
+      apiUrl,
+      {
+        headers: {
+          ...DEFAULT_HEADERS,
+          'Referer': 'http://fund.eastmoney.com/Fund_sgzt_bzdm.html',
+        },
+      },
+      15000
+    );
+
+    if (!apiResponse.ok) {
+      console.error('获取限额数据失败:', apiResponse.status);
+      return {};
+    }
+
+    const text = await apiResponse.text();
+    const jsonMatch = text.match(/var\s+reData\s*=\s*(\{[\s\S]*\})/);
+    
+    if (!jsonMatch) {
+      console.error('解析限额数据失败');
+      return {};
+    }
+
+    const data = JSON.parse(jsonMatch[1]);
+    const results: Record<string, any> = {};
+
+    for (const targetCode of codes) {
+      const fundData = data.datas?.find((item: string[]) => item[0] === targetCode);
+
+      if (fundData) {
+        const dailyLimitRaw = fundData[9] || '';
+        const isUnlimited = dailyLimitRaw.includes('无限额') || (parseNumeric(dailyLimitRaw) !== null && parseNumeric(dailyLimitRaw)! >= UNLIMITED_THRESHOLD);
+        const isSuspended = dailyLimitRaw.trim() === '' || dailyLimitRaw === '---' || fundData[5] === '暂停申购' || fundData[5] === '停止申购';
+
+        let dailyLimit: number | null = null;
+        if (!isUnlimited && !isSuspended) {
+          dailyLimit = parseNumeric(dailyLimitRaw);
+        }
+
+        results[targetCode] = {
+          code: fundData[0] || targetCode,
+          name: fundData[1] || '',
+          fundType: fundData[2] || '',
+          netValue: parseNumeric(fundData[3]),
+          netValueDate: fundData[4] || null,
+          purchaseStatus: fundData[5] || '',
+          redeemStatus: fundData[6] || '',
+          nextOpenDate: fundData[7] || '',
+          minPurchase: parseNumeric(fundData[8]),
+          dailyLimit,
+          isUnlimited,
+          isSuspended,
+          rate: parseNumeric(fundData[12]),
+          rateDiscount: parseNumeric(fundData[10]),
+        };
+      }
+    }
+
+    return results;
+  } catch (error) {
+    console.error('获取基金限额信息失败:', error);
+    return {};
+  }
 };
 
 export default async function handler(
@@ -171,63 +345,46 @@ export default async function handler(
   response: VercelResponse
 ) {
   try {
-    const funds = await Promise.all(
-      NASDAQ_FUND_CODES.map(async (code) => {
-        const baseInfo = FUND_BASE_INFO[code];
-        
-        try {
-          const [realtimeRes, detailRes] = await Promise.all([
-            fetch(
-              `${request.headers['x-forwarded-proto'] || 'https'}://${request.headers.host}/api/fund/realtime?code=${code}`
-            ),
-            fetch(
-              `${request.headers['x-forwarded-proto'] || 'https'}://${request.headers.host}/api/fund/detail?code=${code}`
-            ),
-          ]);
+    const [realtimeResults, detailResults, limitData] = await Promise.all([
+      Promise.all(NASDAQ_FUND_CODES.map(code => fetchRealtimeData(code))),
+      Promise.all(NASDAQ_FUND_CODES.map(code => fetchDetailData(code))),
+      fetchLimitData(NASDAQ_FUND_CODES),
+    ]);
 
-          const realtime = realtimeRes.ok ? await realtimeRes.json() : null;
-          const detail = detailRes.ok ? await detailRes.json() : null;
+    const funds: Fund[] = NASDAQ_FUND_CODES.map((code, index) => {
+      const baseInfo = FUND_BASE_INFO[code];
+      const realtime = realtimeResults[index];
+      const detail = detailResults[index];
+      const limit = limitData[code];
 
-          return {
-            id: code,
-            code,
-            name: detail?.name || baseInfo.name,
-            limitStatus: 'unlimited' as const,
-            limitAmount: undefined,
-            limitNote: '限额以基金公司公告为准',
-            oneYearReturn: detail?.oneYearReturn || 0,
-            company: baseInfo.company,
-            establishDate: baseInfo.establishDate,
-            fundSize: baseInfo.fundSize,
-            fundType: baseInfo.fundType,
-            riskLevel: baseInfo.riskLevel,
-            lastUpdated: realtime?.updateTime || new Date().toISOString(),
-            netValue: realtime?.netValue,
-            estimatedValue: realtime?.estimatedValue,
-            estimatedChange: realtime?.estimatedChange,
-            sourceRate: detail?.sourceRate,
-            rate: detail?.rate,
-          };
-        } catch (err) {
-          console.error(`获取基金 ${code} 数据失败:`, err);
-          return {
-            id: code,
-            code,
-            name: baseInfo.name,
-            limitStatus: 'unlimited' as const,
-            limitAmount: undefined,
-            limitNote: '限额以基金公司公告为准',
-            oneYearReturn: 0,
-            company: baseInfo.company,
-            establishDate: baseInfo.establishDate,
-            fundSize: baseInfo.fundSize,
-            fundType: baseInfo.fundType,
-            riskLevel: baseInfo.riskLevel,
-            lastUpdated: new Date().toISOString(),
-          };
-        }
-      })
-    );
+      const limitInfo = determineLimitStatus(
+        limit?.purchaseStatus || '',
+        limit?.dailyLimit ?? null,
+        limit?.isUnlimited ?? false,
+        limit?.isSuspended ?? false
+      );
+
+      return {
+        id: code,
+        code,
+        name: detail?.name || limit?.name || baseInfo.name,
+        limitStatus: limitInfo.status,
+        limitAmount: limitInfo.amount,
+        limitNote: limitInfo.note,
+        oneYearReturn: detail?.oneYearReturn || 0,
+        company: baseInfo.company,
+        establishDate: baseInfo.establishDate,
+        fundSize: baseInfo.fundSize,
+        fundType: baseInfo.fundType,
+        riskLevel: baseInfo.riskLevel,
+        lastUpdated: realtime?.updateTime || new Date().toISOString(),
+        netValue: realtime?.netValue,
+        estimatedValue: realtime?.estimatedValue,
+        estimatedChange: realtime?.estimatedChange,
+        sourceRate: detail?.sourceRate,
+        rate: detail?.rate || limit?.rate,
+      };
+    });
 
     response.setHeader('Cache-Control', 's-maxage=300, stale-while-revalidate=1800');
 
