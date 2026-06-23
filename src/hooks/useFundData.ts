@@ -1,9 +1,13 @@
 import { useState, useEffect, useCallback } from 'react';
 import { Fund, FilterOptions } from '../types/fund';
-import { fetchFundData } from '../utils/mock';
 
 const CACHE_KEY = 'fund_data_cache';
 const CACHE_DURATION = 5 * 60 * 1000;
+
+interface ApiResponse {
+  funds: Fund[];
+  lastUpdated: string;
+}
 
 interface UseFundDataReturn {
   funds: Fund[];
@@ -15,6 +19,14 @@ interface UseFundDataReturn {
   refresh: () => Promise<void>;
   filteredFunds: Fund[];
 }
+
+const fetchFundDataFromApi = async (): Promise<ApiResponse> => {
+  const response = await fetch('/api/fund/list');
+  if (!response.ok) {
+    throw new Error('Failed to fetch fund data');
+  }
+  return response.json();
+};
 
 export const useFundData = (): UseFundDataReturn => {
   const [funds, setFunds] = useState<Fund[]>([]);
@@ -37,17 +49,17 @@ export const useFundData = (): UseFundDataReturn => {
         if (cached) {
           const { data, timestamp } = JSON.parse(cached);
           if (Date.now() - timestamp < CACHE_DURATION) {
-            setFunds(data);
-            setLastUpdated(data[0]?.lastUpdated || null);
+            setFunds(data.funds);
+            setLastUpdated(data.lastUpdated);
             setLoading(false);
             return;
           }
         }
       }
 
-      const data = await fetchFundData();
-      setFunds(data);
-      setLastUpdated(data[0]?.lastUpdated || null);
+      const data = await fetchFundDataFromApi();
+      setFunds(data.funds);
+      setLastUpdated(data.lastUpdated);
 
       localStorage.setItem(
         CACHE_KEY,

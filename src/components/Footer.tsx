@@ -1,4 +1,4 @@
-import { AlertTriangle, Info } from 'lucide-react';
+import { AlertTriangle, Info, Database } from 'lucide-react';
 
 export const Footer = () => {
   return (
@@ -19,11 +19,32 @@ export const Footer = () => {
             </div>
             
             <div className="flex items-start gap-3">
+              <Database className="w-5 h-5 text-success-500 flex-shrink-0 mt-0.5" />
+              <div className="text-sm text-gray-400">
+                <p className="font-medium text-gray-300 mb-1">数据来源</p>
+                <p>
+                  基金名称、代码、净值、估算涨幅、近一年涨幅等数据来自
+                  <a
+                    href="http://fund.eastmoney.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-primary-400 hover:text-primary-300 underline ml-1"
+                  >
+                    天天基金网
+                  </a>
+                  公开 API，为实时最新数据。
+                </p>
+              </div>
+            </div>
+            
+            <div className="flex items-start gap-3">
               <Info className="w-5 h-5 text-primary-400 flex-shrink-0 mt-0.5" />
               <div className="text-sm text-gray-400">
-                <p className="font-medium text-gray-300 mb-1">数据说明</p>
+                <p className="font-medium text-gray-300 mb-1">限额数据说明</p>
                 <p>
-                  本网站展示的基金限额数据每日更新，实际限额以基金公司官方公告为准。
+                  基金限额信息没有统一的公开 API，实际限额以
+                  <span className="text-primary-400 font-medium">基金公司官方公告</span>
+                  为准。点击"查看公告"链接可跳转到天天基金网的基金公告页面。
                   近一年涨幅数据为历史业绩，不代表未来表现。
                 </p>
               </div>

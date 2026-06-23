@@ -6,6 +6,7 @@ export interface Fund {
   name: string;
   limitStatus: FundLimitStatus;
   limitAmount?: number;
+  limitNote?: string;
   oneYearReturn: number;
   company: string;
   establishDate: string;
@@ -13,6 +14,11 @@ export interface Fund {
   fundType: string;
   riskLevel: string;
   lastUpdated: string;
+  netValue?: number;
+  estimatedValue?: number;
+  estimatedChange?: number;
+  sourceRate?: number;
+  rate?: number;
 }
 
 export interface FilterOptions {

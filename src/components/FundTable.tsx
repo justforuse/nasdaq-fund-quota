@@ -1,8 +1,7 @@
 import { useState } from 'react';
-import { ChevronDown, ChevronUp } from 'lucide-react';
+import { ChevronDown, ChevronUp, ExternalLink } from 'lucide-react';
 import { Fund } from '../types/fund';
-import { formatCurrency, formatReturn, getReturnColor, getStatusColor } from '../utils/format';
-import { statusLabels } from '../types/fund';
+import { formatReturn, getReturnColor } from '../utils/format';
 import { FundDetail } from './FundDetail';
 import { cn } from '../lib/utils';
 
@@ -55,14 +54,14 @@ export const FundTable = ({ funds }: FundTableProps) => {
                   <td className="px-6 py-4">
                     <div className="space-y-1">
                       <div className="text-white font-medium">{fund.name}</div>
-                      <span
-                        className={cn(
-                          'inline-flex items-center px-2.5 py-0.5 text-xs font-medium rounded-lg border',
-                          getStatusColor(fund.limitStatus)
-                        )}
-                      >
-                        {statusLabels[fund.limitStatus]}
-                      </span>
+                      {fund.estimatedChange !== undefined && (
+                        <span className={cn(
+                          'inline-flex items-center px-2 py-0.5 text-xs font-medium rounded-lg',
+                          fund.estimatedChange >= 0 ? 'bg-success-500/20 text-success-500' : 'bg-danger-500/20 text-danger-500'
+                        )}>
+                          估算 {fund.estimatedChange >= 0 ? '+' : ''}{fund.estimatedChange.toFixed(2)}%
+                        </span>
+                      )}
                     </div>
                   </td>
                   <td className="px-6 py-4">
@@ -71,16 +70,18 @@ export const FundTable = ({ funds }: FundTableProps) => {
                     </code>
                   </td>
                   <td className="px-6 py-4">
-                    <div className="text-gray-300">
-                      {fund.limitStatus === 'limited' ? (
-                        <span className="text-warning-500 font-medium">
-                          单日限额 {formatCurrency(fund.limitAmount)}
-                        </span>
-                      ) : fund.limitStatus === 'unlimited' ? (
-                        <span className="text-success-500 font-medium">无限制</span>
-                      ) : (
-                        <span className="text-danger-500 font-medium">暂停申购</span>
-                      )}
+                    <a
+                      href={`http://fundf10.eastmoney.com/jjgg_${fund.code}.html`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={(e) => e.stopPropagation()}
+                      className="inline-flex items-center gap-1.5 text-primary-400 hover:text-primary-300 text-sm font-medium transition-colors"
+                    >
+                      查看公告
+                      <ExternalLink className="w-3.5 h-3.5" />
+                    </a>
+                    <div className="text-xs text-gray-500 mt-1">
+                      限额以基金公司公告为准
                     </div>
                   </td>
                   <td className="px-6 py-4 text-right">
