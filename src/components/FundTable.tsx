@@ -63,7 +63,7 @@ export const FundTable = ({ funds }: FundTableProps) => {
                         >
                           {statusLabels[fund.limitStatus]}
                         </span>
-                        {fund.estimatedChange !== undefined && (
+                        {fund.estimatedChange != null && (
                           <span className={cn(
                             'inline-flex items-center px-2 py-0.5 text-xs font-medium rounded-lg',
                             fund.estimatedChange >= 0 ? 'bg-success-500/20 text-success-500' : 'bg-danger-500/20 text-danger-500'

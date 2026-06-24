@@ -10,7 +10,7 @@ interface FundDetailProps {
 export const FundDetail = ({ fund }: FundDetailProps) => {
   const realtimeDetails = [];
 
-  if (fund.netValue !== undefined) {
+  if (fund.netValue != null) {
     realtimeDetails.push({
       icon: DollarSign,
       label: '单位净值',
@@ -18,7 +18,7 @@ export const FundDetail = ({ fund }: FundDetailProps) => {
     });
   }
 
-  if (fund.estimatedValue !== undefined) {
+  if (fund.estimatedValue != null) {
     realtimeDetails.push({
       icon: TrendingUp,
       label: '估算净值',
@@ -26,7 +26,7 @@ export const FundDetail = ({ fund }: FundDetailProps) => {
     });
   }
 
-  if (fund.estimatedChange !== undefined) {
+  if (fund.estimatedChange != null) {
     realtimeDetails.push({
       icon: TrendingUp,
       label: '估算涨幅',
@@ -36,7 +36,7 @@ export const FundDetail = ({ fund }: FundDetailProps) => {
     });
   }
 
-  if (fund.rate !== undefined) {
+  if (fund.rate != null) {
     realtimeDetails.push({
       icon: DollarSign,
       label: '申购费率',

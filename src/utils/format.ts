@@ -8,7 +8,8 @@ export const formatCurrency = (amount?: number): string => {
   return `${amount.toLocaleString()}元`;
 };
 
-export const formatReturn = (value: number): string => {
+export const formatReturn = (value?: number | null): string => {
+  if (value === undefined || value === null) return '-';
   const sign = value >= 0 ? '+' : '';
   return `${sign}${value.toFixed(2)}%`;
 };
@@ -33,7 +34,8 @@ export const formatDateTime = (dateString: string): string => {
   });
 };
 
-export const getReturnColor = (value: number): string => {
+export const getReturnColor = (value?: number | null): string => {
+  if (value === undefined || value === null) return 'text-gray-400';
   if (value > 0) return 'text-success-500';
   if (value < 0) return 'text-danger-500';
   return 'text-gray-400';
