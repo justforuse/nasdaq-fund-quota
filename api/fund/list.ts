@@ -9,10 +9,21 @@ const DEFAULT_HEADERS = {
 const NASDAQ_KEYWORDS = ['纳斯达克', '纳指'];
 const EXCLUDE_KEYWORDS = ['标普', '道琼斯', '德国', '法国', '英国', '日本', '日经', '恒生', '越南', '印度'];
 
-const FALLBACK_CODES = [
-  '270042', '160213', '040046', '000834', '003722',
-  '006479', '513100', '159659', '007280', '011417',
-  '008766', '004903', '007800', '013308',
+const FALLBACK_FUNDS: { code: string; name: string }[] = [
+  { code: '270042', name: '广发纳斯达克100ETF联接人民币A' },
+  { code: '160213', name: '国泰纳斯达克100指数' },
+  { code: '040046', name: '华安纳斯达克100ETF联接A' },
+  { code: '000834', name: '大成纳斯达克100指数A' },
+  { code: '003722', name: '国泰纳斯达克100ETF联接A' },
+  { code: '006479', name: '华夏纳斯达克100ETF联接A' },
+  { code: '513100', name: '纳斯达克100ETF' },
+  { code: '159659', name: '纳斯达克100ETF' },
+  { code: '007280', name: '华夏纳斯达克100ETF联接C' },
+  { code: '011417', name: '华安纳斯达克100ETF联接C' },
+  { code: '008766', name: '国泰纳斯达克100ETF联接C' },
+  { code: '004903', name: '广发纳斯达克100ETF联接人民币C' },
+  { code: '007800', name: '大成纳斯达克100指数C' },
+  { code: '013308', name: '国泰纳斯达克100指数C' },
 ];
 
 const parseNumeric = (val: string | null): number | null => {
@@ -104,7 +115,7 @@ const crawlNasdaqFunds = async (timeoutMs: number): Promise<CrawledFund[]> => {
   };
 
   try {
-    const url = `http://fund.eastmoney.com/Data/Fund_JJJZ_Data.aspx?t=8&page=1,30000&js=var%20reData&sort=fcode,asc`;
+    const url = `http://fund.eastmoney.com/Data/Fund_JJJZ_Data.aspx?t=5&page=1,2000&js=var%20reData&sort=fcode,asc`;
     const res = await fetchWithTimeout(url, { headers }, timeoutMs);
     if (!res.ok) return [];
 
@@ -141,9 +152,9 @@ export default async function handler(
     if (crawledFunds.length > 0) {
       fundList = crawledFunds;
     } else {
-      fundList = FALLBACK_CODES.map(code => ({
-        code,
-        name: '',
+      fundList = FALLBACK_FUNDS.map(f => ({
+        code: f.code,
+        name: f.name,
         fundType: 'QDII指数型',
         netValue: null,
         purchaseStatus: '',
