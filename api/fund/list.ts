@@ -141,36 +141,6 @@ const crawlNasdaqFunds = async (timeoutMs: number): Promise<CrawledFund[]> => {
   }
 };
 
-const fetchRealtimeData = async (code: string): Promise<{
-  name: string;
-  netValue: number;
-  estimatedValue: number;
-  estimatedChange: number;
-  updateTime: string;
-} | null> => {
-  try {
-    const res = await fetchWithTimeout(
-      `http://fundgz.1234567.com.cn/js/${code}.js`,
-      { headers: { ...DEFAULT_HEADERS, Referer: 'http://fund.eastmoney.com/' } },
-      4000
-    );
-    if (!res.ok) return null;
-    const text = await res.text();
-    const match = text.match(/jsonpgz\((.*)\);/);
-    if (!match || !match[1]) return null;
-    const data = JSON.parse(match[1]);
-    return {
-      name: data.name,
-      netValue: parseFloat(data.dwjz),
-      estimatedValue: parseFloat(data.gsz),
-      estimatedChange: parseFloat(data.gszzl),
-      updateTime: data.gztime,
-    };
-  } catch {
-    return null;
-  }
-};
-
 export default async function handler(
   request: VercelRequest,
   response: VercelResponse
@@ -178,31 +148,24 @@ export default async function handler(
   const startTime = Date.now();
 
   try {
-    const crawlPromise = crawlNasdaqFunds(4000);
-
-    const realtimePromises = KNOWN_FUNDS.map(f => fetchRealtimeData(f.code));
-    const realtimeResults = await Promise.all(realtimePromises);
-
-    const crawledFunds = await crawlPromise;
+    const crawledFunds = await crawlNasdaqFunds(3500);
+    console.log(`Crawl completed in ${Date.now() - startTime}ms, found ${crawledFunds.length} funds`);
 
     let fundList: CrawledFund[];
     if (crawledFunds.length > 0) {
       fundList = crawledFunds;
     } else {
-      fundList = KNOWN_FUNDS.map((f, i) => {
-        const rt = realtimeResults[i];
-        return {
-          code: f.code,
-          name: rt?.name || f.name,
-          fundType: 'QDII指数型',
-          netValue: rt?.netValue || null,
-          purchaseStatus: '',
-          dailyLimit: null,
-          isUnlimited: true,
-          isSuspended: false,
-          rate: rt?.estimatedChange || null,
-        };
-      });
+      fundList = KNOWN_FUNDS.map(f => ({
+        code: f.code,
+        name: f.name,
+        fundType: 'QDII指数型',
+        netValue: null,
+        purchaseStatus: '',
+        dailyLimit: null,
+        isUnlimited: true,
+        isSuspended: false,
+        rate: null,
+      }));
     }
 
     const funds: Fund[] = fundList.map(crawled => {
@@ -214,29 +177,24 @@ export default async function handler(
       );
 
       const knownFund = KNOWN_FUNDS.find(kf => kf.code === crawled.code);
-      const rtIndex = KNOWN_FUNDS.findIndex(kf => kf.code === crawled.code);
-      const rt = rtIndex >= 0 ? realtimeResults[rtIndex] : null;
 
       return {
         id: crawled.code,
         code: crawled.code,
-        name: crawled.name || rt?.name || knownFund?.name || '',
+        name: crawled.name || knownFund?.name || '',
         limitStatus: limitInfo.status,
         limitAmount: limitInfo.amount,
         limitNote: limitInfo.note,
         oneYearReturn: 0,
         fundType: crawled.fundType || 'QDII指数型',
-        lastUpdated: rt?.updateTime || new Date().toISOString(),
-        netValue: rt?.netValue || crawled.netValue,
-        estimatedValue: rt?.estimatedValue,
-        estimatedChange: rt?.estimatedChange || crawled.rate,
-        rate: rt?.estimatedChange || crawled.rate,
+        lastUpdated: new Date().toISOString(),
+        netValue: crawled.netValue,
+        estimatedChange: crawled.rate,
+        rate: crawled.rate,
       };
     });
 
     const codes = fundList.map(f => f.code);
-    const elapsed = Date.now() - startTime;
-    console.log(`List API completed in ${elapsed}ms, source: ${crawledFunds.length > 0 ? 'crawl' : 'fallback'}`);
 
     response.setHeader('Cache-Control', 's-maxage=300, stale-while-revalidate=1800');
 
