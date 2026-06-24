@@ -7,10 +7,9 @@ import { cn } from '../lib/utils';
 
 interface FundTableProps {
   funds: Fund[];
-  returnsLoading?: boolean;
 }
 
-export const FundTable = ({ funds, returnsLoading }: FundTableProps) => {
+export const FundTable = ({ funds }: FundTableProps) => {
   const [expandedId, setExpandedId] = useState<string | null>(null);
 
   const toggleExpand = (id: string) => {
@@ -106,13 +105,9 @@ export const FundTable = ({ funds, returnsLoading }: FundTableProps) => {
                     </div>
                   </td>
                   <td className="px-6 py-4 text-right">
-                    {returnsLoading && fund.oneYearReturn === 0 ? (
-                      <span className="text-gray-500 text-sm">加载中...</span>
-                    ) : (
-                      <span className={cn('text-lg font-semibold', getReturnColor(fund.oneYearReturn))}>
-                        {formatReturn(fund.oneYearReturn)}
-                      </span>
-                    )}
+                    <span className={cn('text-lg font-semibold', getReturnColor(fund.oneYearReturn))}>
+                      {formatReturn(fund.oneYearReturn)}
+                    </span>
                   </td>
                   <td className="px-6 py-4 text-center">
                     {expandedId === fund.id ? (

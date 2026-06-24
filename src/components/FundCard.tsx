@@ -7,10 +7,9 @@ import { cn } from '../lib/utils';
 
 interface FundCardProps {
   fund: Fund;
-  returnsLoading?: boolean;
 }
 
-export const FundCard = ({ fund, returnsLoading }: FundCardProps) => {
+export const FundCard = ({ fund }: FundCardProps) => {
   const [expanded, setExpanded] = useState(false);
 
   return (
@@ -52,13 +51,9 @@ export const FundCard = ({ fund, returnsLoading }: FundCardProps) => {
             </div>
           </div>
           <div className="flex flex-col items-end gap-2">
-            {returnsLoading && fund.oneYearReturn === 0 ? (
-              <span className="text-gray-500 text-sm">加载中</span>
-            ) : (
-              <span className={cn('text-xl font-bold', getReturnColor(fund.oneYearReturn))}>
-                {formatReturn(fund.oneYearReturn)}
-              </span>
-            )}
+            <span className={cn('text-xl font-bold', getReturnColor(fund.oneYearReturn))}>
+              {formatReturn(fund.oneYearReturn)}
+            </span>
             <div className="text-xs text-gray-400">近一年</div>
           </div>
         </div>
@@ -107,7 +102,7 @@ export const FundCard = ({ fund, returnsLoading }: FundCardProps) => {
   );
 };
 
-export const FundCardList = ({ funds, returnsLoading }: { funds: Fund[]; returnsLoading?: boolean }) => {
+export const FundCardList = ({ funds }: { funds: Fund[] }) => {
   if (funds.length === 0) {
     return (
       <div className="md:hidden py-16 text-center text-gray-500">
@@ -119,7 +114,7 @@ export const FundCardList = ({ funds, returnsLoading }: { funds: Fund[]; returns
   return (
     <div className="md:hidden space-y-4">
       {funds.map(fund => (
-        <FundCard key={fund.id} fund={fund} returnsLoading={returnsLoading} />
+        <FundCard key={fund.id} fund={fund} />
       ))}
     </div>
   );

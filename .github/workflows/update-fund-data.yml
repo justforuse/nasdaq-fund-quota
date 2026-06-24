@@ -1,0 +1,40 @@
+name: Update Fund Data
+
+on:
+  schedule:
+    - cron: '0/30 * * * *'
+  workflow_dispatch:
+
+jobs:
+  crawl:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Run crawl script
+        run: node scripts/crawl.js
+
+      - name: Check for changes
+        id: check_changes
+        run: |
+          if git diff --quiet public/data/funds.json; then
+            echo "has_changes=false" >> $GITHUB_OUTPUT
+          else
+            echo "has_changes=true" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Commit and push
+        if: steps.check_changes.outputs.has_changes == 'true'
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add public/data/funds.json
+          git commit -m "chore: update fund data [skip ci]"
+          git push

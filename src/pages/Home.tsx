@@ -11,7 +11,6 @@ export default function Home() {
   const {
     funds,
     loading,
-    returnsLoading,
     error,
     lastUpdated,
     filters,
@@ -26,7 +25,6 @@ export default function Home() {
         lastUpdated={lastUpdated}
         onRefresh={refresh}
         loading={loading}
-        returnsLoading={returnsLoading}
       />
 
       <main className="flex-1 container py-6 md:py-8">
@@ -49,8 +47,8 @@ export default function Home() {
             <Loading />
           ) : (
             <>
-              <FundTable funds={filteredFunds} returnsLoading={returnsLoading} />
-              <FundCardList funds={filteredFunds} returnsLoading={returnsLoading} />
+              <FundTable funds={filteredFunds} />
+              <FundCardList funds={filteredFunds} />
             </>
           )}
         </div>

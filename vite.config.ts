@@ -8,14 +8,6 @@ export default defineConfig({
   build: {
     sourcemap: 'hidden',
   },
-  server: {
-    proxy: {
-      '/api': {
-        target: 'https://fund-limit.vercel.app',
-        changeOrigin: true,
-      },
-    },
-  },
   plugins: [
     react({
       babel: {
