@@ -2,6 +2,14 @@
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
   "framework": "vite",
+  "functions": {
+    "api/fund/list.ts": {
+      "maxDuration": 25
+    },
+    "api/fund/crawl.ts": {
+      "maxDuration": 25
+    }
+  },
   "rewrites": [
     { "source": "/(.*)", "destination": "/index.html" }
   ]

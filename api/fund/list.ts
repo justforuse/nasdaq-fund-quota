@@ -1,171 +1,17 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 import type { Fund, FundLimitStatus } from '../../src/types/fund';
 
-const NASDAQ_FUND_CODES = [
-  '270042',
-  '160213',
-  '040046',
-  '000834',
-  '003722',
-  '006479',
-  '513100',
-  '159659',
-  '007280',
-  '011417',
-  '008766',
-  '004903',
-  '007800',
-  '013308',
-];
-
-interface FundBaseInfo {
-  code: string;
-  name: string;
-  company: string;
-  establishDate: string;
-  fundSize: number;
-  fundType: string;
-  riskLevel: string;
-}
-
-const FUND_BASE_INFO: Record<string, FundBaseInfo> = {
-  '270042': {
-    code: '270042',
-    name: '广发纳斯达克100ETF联接人民币(QDII)A',
-    company: '广发基金管理有限公司',
-    establishDate: '2012-08-15',
-    fundSize: 85.62,
-    fundType: 'QDII指数型',
-    riskLevel: 'R4中高风险',
-  },
-  '160213': {
-    code: '160213',
-    name: '国泰纳斯达克100指数(QDII)',
-    company: '国泰基金管理有限公司',
-    establishDate: '2010-04-29',
-    fundSize: 72.31,
-    fundType: 'QDII指数型',
-    riskLevel: 'R4中高风险',
-  },
-  '040046': {
-    code: '040046',
-    name: '华安纳斯达克100指数(QDII)',
-    company: '华安基金管理有限公司',
-    establishDate: '2013-08-02',
-    fundSize: 63.45,
-    fundType: 'QDII指数型',
-    riskLevel: 'R4中高风险',
-  },
-  '000834': {
-    code: '000834',
-    name: '大成纳斯达克100指数(QDII)',
-    company: '大成基金管理有限公司',
-    establishDate: '2014-11-14',
-    fundSize: 28.76,
-    fundType: 'QDII指数型',
-    riskLevel: 'R4中高风险',
-  },
-  '003722': {
-    code: '003722',
-    name: '易方达纳斯达克100指数(QDII)',
-    company: '易方达基金管理有限公司',
-    establishDate: '2016-12-02',
-    fundSize: 56.89,
-    fundType: 'QDII指数型',
-    riskLevel: 'R4中高风险',
-  },
-  '006479': {
-    code: '006479',
-    name: '华夏纳斯达克100ETF联接(QDII)',
-    company: '华夏基金管理有限公司',
-    establishDate: '2018-10-18',
-    fundSize: 42.18,
-    fundType: 'QDII指数型',
-    riskLevel: 'R4中高风险',
-  },
-  '513100': {
-    code: '513100',
-    name: '国泰纳斯达克100ETF',
-    company: '国泰基金管理有限公司',
-    establishDate: '2013-05-15',
-    fundSize: 125.34,
-    fundType: 'ETF-场内',
-    riskLevel: 'R4中高风险',
-  },
-  '159659': {
-    code: '159659',
-    name: '招商纳斯达克100ETF',
-    company: '招商基金管理有限公司',
-    establishDate: '2022-07-20',
-    fundSize: 98.56,
-    fundType: 'ETF-场内',
-    riskLevel: 'R4中高风险',
-  },
-  '007280': {
-    code: '007280',
-    name: '上投摩根纳斯达克100指数(QDII)',
-    company: '上投摩根基金管理有限公司',
-    establishDate: '2019-09-18',
-    fundSize: 15.67,
-    fundType: 'QDII指数型',
-    riskLevel: 'R4中高风险',
-  },
-  '011417': {
-    code: '011417',
-    name: '工银瑞信纳斯达克100指数(QDII)',
-    company: '工银瑞信基金管理有限公司',
-    establishDate: '2021-03-17',
-    fundSize: 8.23,
-    fundType: 'QDII指数型',
-    riskLevel: 'R4中高风险',
-  },
-  '008766': {
-    code: '008766',
-    name: '嘉实纳斯达克100指数(QDII)',
-    company: '嘉实基金管理有限公司',
-    establishDate: '2019-12-24',
-    fundSize: 22.45,
-    fundType: 'QDII指数型',
-    riskLevel: 'R4中高风险',
-  },
-  '004903': {
-    code: '004903',
-    name: '南方纳斯达克100指数(QDII)',
-    company: '南方基金管理股份有限公司',
-    establishDate: '2017-07-26',
-    fundSize: 31.78,
-    fundType: 'QDII指数型',
-    riskLevel: 'R4中高风险',
-  },
-  '007800': {
-    code: '007800',
-    name: '招商纳斯达克100指数(QDII)',
-    company: '招商基金管理有限公司',
-    establishDate: '2019-08-28',
-    fundSize: 18.92,
-    fundType: 'QDII指数型',
-    riskLevel: 'R4中高风险',
-  },
-  '013308': {
-    code: '013308',
-    name: '汇添富纳斯达克100指数(QDII)',
-    company: '汇添富基金管理股份有限公司',
-    establishDate: '2021-10-26',
-    fundSize: 45.23,
-    fundType: 'QDII指数型',
-    riskLevel: 'R4中高风险',
-  },
-};
-
 const UNLIMITED_THRESHOLD = 800000000;
+const PAGE_SIZE = 5000;
 const DEFAULT_HEADERS = {
   'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
 };
 
+const NASDAQ_KEYWORDS = ['纳斯达克', '纳指', 'NSDAQ', 'NASDAQ'];
+const EXCLUDE_KEYWORDS = ['标普', 'SPI', 'S&P', '道琼斯', 'Dow Jones', '德国', '法国', '英国', '日本', '日经', '恒生', '越南', '印度'];
+
 const parseNumeric = (val: string | null): number | null => {
-  if (!val || val.trim() === '' || val === '---') {
-    return null;
-  }
+  if (!val || val.trim() === '' || val === '---') return null;
   const num = parseFloat(val);
   return isNaN(num) ? null : num;
 };
@@ -174,11 +20,16 @@ const fetchWithTimeout = async (url: string, options: RequestInit, timeout = 150
   const controller = new AbortController();
   const timeoutId = setTimeout(() => controller.abort(), timeout);
   try {
-    const response = await fetch(url, { ...options, signal: controller.signal });
-    return response;
+    return await fetch(url, { ...options, signal: controller.signal });
   } finally {
     clearTimeout(timeoutId);
   }
+};
+
+const isNasdaqFund = (name: string): boolean => {
+  if (!NASDAQ_KEYWORDS.some(kw => name.includes(kw))) return false;
+  if (EXCLUDE_KEYWORDS.some(kw => name.includes(kw))) return false;
+  return true;
 };
 
 const determineLimitStatus = (
@@ -211,13 +62,10 @@ const fetchRealtimeData = async (code: string): Promise<any | null> => {
       },
       8000
     );
-
     if (!apiResponse.ok) return null;
     const text = await apiResponse.text();
-    
     const jsonMatch = text.match(/jsonpgz\((.*)\);/);
     if (!jsonMatch || !jsonMatch[1]) return null;
-
     const data = JSON.parse(jsonMatch[1]);
     return {
       code: data.fundcode,
@@ -229,7 +77,7 @@ const fetchRealtimeData = async (code: string): Promise<any | null> => {
       updateTime: data.gztime,
     };
   } catch (error) {
-    console.error(`获取实时数据失败 ${code}:`, error);
+    console.error(`Realtime fetch failed ${code}:`, error);
     return null;
   }
 };
@@ -246,16 +94,13 @@ const fetchDetailData = async (code: string): Promise<any | null> => {
       },
       8000
     );
-
     if (!apiResponse.ok) return null;
     const text = await apiResponse.text();
-
     const extractValue = (pattern: string): string => {
       const regex = new RegExp(`var ${pattern}\\s*=\\s*"([^"]*)"`, 'i');
       const match = text.match(regex);
       return match ? match[1] : '';
     };
-
     return {
       name: extractValue('fS_name'),
       code: extractValue('fS_code'),
@@ -265,79 +110,114 @@ const fetchDetailData = async (code: string): Promise<any | null> => {
       oneYearReturn: parseFloat(extractValue('syl_1n')) || 0,
     };
   } catch (error) {
-    console.error(`获取详细数据失败 ${code}:`, error);
+    console.error(`Detail fetch failed ${code}:`, error);
     return null;
   }
 };
 
-const fetchLimitData = async (codes: string[]): Promise<Record<string, any>> => {
-  try {
-    const apiUrl = `http://fund.eastmoney.com/Data/Fund_JJJZ_Data.aspx?t=8&page=1,500&js=var%20reData&sort=fcode,asc`;
-    
-    const apiResponse = await fetchWithTimeout(
-      apiUrl,
-      {
-        headers: {
-          ...DEFAULT_HEADERS,
-          'Referer': 'http://fund.eastmoney.com/Fund_sgzt_bzdm.html',
-        },
-      },
-      15000
-    );
+interface CrawledFund {
+  code: string;
+  name: string;
+  fundType: string;
+  netValue: number | null;
+  netValueDate: string | null;
+  purchaseStatus: string;
+  redeemStatus: string;
+  nextOpenDate: string;
+  minPurchase: number | null;
+  dailyLimit: number | null;
+  isUnlimited: boolean;
+  isSuspended: boolean;
+  rate: number | null;
+  rateDiscount: number | null;
+}
 
-    if (!apiResponse.ok) {
-      console.error('获取限额数据失败:', apiResponse.status);
-      return {};
-    }
+const parseFundFromRow = (row: string[]): CrawledFund | null => {
+  if (!row || row.length < 10) return null;
+  const code = row[0] || '';
+  const name = row[1] || '';
+  if (!code || !name) return null;
 
-    const text = await apiResponse.text();
-    const jsonMatch = text.match(/var\s+reData\s*=\s*(\{[\s\S]*\})/);
-    
-    if (!jsonMatch) {
-      console.error('解析限额数据失败');
-      return {};
-    }
+  const dailyLimitRaw = row[9] || '';
+  const isUnlimited = dailyLimitRaw.includes('无限额') ||
+    (parseNumeric(dailyLimitRaw) !== null && parseNumeric(dailyLimitRaw)! >= UNLIMITED_THRESHOLD);
+  const isSuspended = dailyLimitRaw.trim() === '' || dailyLimitRaw === '---' ||
+    row[5] === '暂停申购' || row[5] === '停止申购';
 
-    const data = JSON.parse(jsonMatch[1]);
-    const results: Record<string, any> = {};
+  let dailyLimit: number | null = null;
+  if (!isUnlimited && !isSuspended) {
+    dailyLimit = parseNumeric(dailyLimitRaw);
+  }
 
-    for (const targetCode of codes) {
-      const fundData = data.datas?.find((item: string[]) => item[0] === targetCode);
+  return {
+    code,
+    name,
+    fundType: row[2] || '',
+    netValue: parseNumeric(row[3]),
+    netValueDate: row[4] || null,
+    purchaseStatus: row[5] || '',
+    redeemStatus: row[6] || '',
+    nextOpenDate: row[7] || '',
+    minPurchase: parseNumeric(row[8]),
+    dailyLimit,
+    isUnlimited,
+    isSuspended,
+    rate: parseNumeric(row[12]),
+    rateDiscount: parseNumeric(row[10]),
+  };
+};
 
-      if (fundData) {
-        const dailyLimitRaw = fundData[9] || '';
-        const isUnlimited = dailyLimitRaw.includes('无限额') || (parseNumeric(dailyLimitRaw) !== null && parseNumeric(dailyLimitRaw)! >= UNLIMITED_THRESHOLD);
-        const isSuspended = dailyLimitRaw.trim() === '' || dailyLimitRaw === '---' || fundData[5] === '暂停申购' || fundData[5] === '停止申购';
+const crawlNasdaqFunds = async (): Promise<CrawledFund[]> => {
+  const headers = {
+    ...DEFAULT_HEADERS,
+    'Referer': 'http://fund.eastmoney.com/Fund_sgzt_bzdm.html',
+  };
 
-        let dailyLimit: number | null = null;
-        if (!isUnlimited && !isSuspended) {
-          dailyLimit = parseNumeric(dailyLimitRaw);
+  const firstPageUrl = `http://fund.eastmoney.com/Data/Fund_JJJZ_Data.aspx?t=8&page=1,${PAGE_SIZE}&js=var%20reData&sort=fcode,asc`;
+  const firstPageRes = await fetchWithTimeout(firstPageUrl, { headers }, 12000);
+  if (!firstPageRes.ok) return [];
+
+  const firstPageText = await firstPageRes.text();
+  const totalPagesMatch = firstPageText.match(/pages:"(\d+)"/);
+  const totalPages = totalPagesMatch ? parseInt(totalPagesMatch[1]) : 1;
+
+  const parsePageNasdaq = (text: string): CrawledFund[] => {
+    const arrMatch = text.match(/datas:\s*(\[[\s\S]*?\]),\s*record/);
+    if (!arrMatch) return [];
+    const datas = JSON.parse(arrMatch[1]);
+    return datas
+      .filter((row: string[]) => isNasdaqFund(row[1] || ''))
+      .map((row: string[]) => parseFundFromRow(row))
+      .filter((f: CrawledFund | null): f is CrawledFund => f !== null);
+  };
+
+  let allNasdaq = parsePageNasdaq(firstPageText);
+
+  if (totalPages > 1) {
+    const otherPagesText = await Promise.all(
+      Array.from({ length: totalPages - 1 }, async (_, i) => {
+        try {
+          const url = `http://fund.eastmoney.com/Data/Fund_JJJZ_Data.aspx?t=8&page=${i + 2},${PAGE_SIZE}&js=var%20reData&sort=fcode,asc`;
+          const res = await fetchWithTimeout(url, { headers }, 12000);
+          return res.ok ? await res.text() : '';
+        } catch {
+          return '';
         }
-
-        results[targetCode] = {
-          code: fundData[0] || targetCode,
-          name: fundData[1] || '',
-          fundType: fundData[2] || '',
-          netValue: parseNumeric(fundData[3]),
-          netValueDate: fundData[4] || null,
-          purchaseStatus: fundData[5] || '',
-          redeemStatus: fundData[6] || '',
-          nextOpenDate: fundData[7] || '',
-          minPurchase: parseNumeric(fundData[8]),
-          dailyLimit,
-          isUnlimited,
-          isSuspended,
-          rate: parseNumeric(fundData[12]),
-          rateDiscount: parseNumeric(fundData[10]),
-        };
+      })
+    );
+    for (const pageText of otherPagesText) {
+      if (pageText) {
+        allNasdaq = allNasdaq.concat(parsePageNasdaq(pageText));
       }
     }
-
-    return results;
-  } catch (error) {
-    console.error('获取基金限额信息失败:', error);
-    return {};
   }
+
+  const seen = new Set<string>();
+  return allNasdaq.filter(f => {
+    if (seen.has(f.code)) return false;
+    seen.add(f.code);
+    return true;
+  });
 };
 
 export default async function handler(
@@ -345,44 +225,49 @@ export default async function handler(
   response: VercelResponse
 ) {
   try {
-    const [realtimeResults, detailResults, limitData] = await Promise.all([
-      Promise.all(NASDAQ_FUND_CODES.map(code => fetchRealtimeData(code))),
-      Promise.all(NASDAQ_FUND_CODES.map(code => fetchDetailData(code))),
-      fetchLimitData(NASDAQ_FUND_CODES),
+    const nasdaqFunds = await crawlNasdaqFunds();
+
+    if (nasdaqFunds.length === 0) {
+      return response.status(500).json({ error: '未发现纳斯达克基金数据' });
+    }
+
+    const fundCodes = nasdaqFunds.map(f => f.code);
+
+    const [realtimeResults, detailResults] = await Promise.all([
+      Promise.all(fundCodes.map(code => fetchRealtimeData(code))),
+      Promise.all(fundCodes.map(code => fetchDetailData(code))),
     ]);
 
-    const funds: Fund[] = NASDAQ_FUND_CODES.map((code, index) => {
-      const baseInfo = FUND_BASE_INFO[code];
+    const funds: Fund[] = nasdaqFunds.map((crawled, index) => {
       const realtime = realtimeResults[index];
       const detail = detailResults[index];
-      const limit = limitData[code];
 
       const limitInfo = determineLimitStatus(
-        limit?.purchaseStatus || '',
-        limit?.dailyLimit ?? null,
-        limit?.isUnlimited ?? false,
-        limit?.isSuspended ?? false
+        crawled.purchaseStatus,
+        crawled.dailyLimit,
+        crawled.isUnlimited,
+        crawled.isSuspended
       );
 
       return {
-        id: code,
-        code,
-        name: detail?.name || limit?.name || baseInfo.name,
+        id: crawled.code,
+        code: crawled.code,
+        name: detail?.name || crawled.name,
         limitStatus: limitInfo.status,
         limitAmount: limitInfo.amount,
         limitNote: limitInfo.note,
         oneYearReturn: detail?.oneYearReturn || 0,
-        company: baseInfo.company,
-        establishDate: baseInfo.establishDate,
-        fundSize: baseInfo.fundSize,
-        fundType: baseInfo.fundType,
-        riskLevel: baseInfo.riskLevel,
-        lastUpdated: realtime?.updateTime || new Date().toISOString(),
-        netValue: realtime?.netValue,
+        company: '',
+        establishDate: '',
+        fundSize: 0,
+        fundType: crawled.fundType,
+        riskLevel: '',
+        lastUpdated: realtime?.updateTime || crawled.netValueDate || new Date().toISOString(),
+        netValue: realtime?.netValue || crawled.netValue,
         estimatedValue: realtime?.estimatedValue,
         estimatedChange: realtime?.estimatedChange,
-        sourceRate: detail?.sourceRate,
-        rate: detail?.rate || limit?.rate,
+        sourceRate: detail?.sourceRate || crawled.rate,
+        rate: detail?.rate || crawled.rate,
       };
     });
 
@@ -391,6 +276,7 @@ export default async function handler(
     return response.status(200).json({
       funds,
       lastUpdated: new Date().toISOString(),
+      discoveredCount: nasdaqFunds.length,
     });
   } catch (error) {
     console.error('获取基金列表失败:', error);

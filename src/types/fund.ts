@@ -8,11 +8,11 @@ export interface Fund {
   limitAmount?: number;
   limitNote?: string;
   oneYearReturn: number;
-  company: string;
-  establishDate: string;
-  fundSize: number;
+  company?: string;
+  establishDate?: string;
+  fundSize?: number;
   fundType: string;
-  riskLevel: string;
+  riskLevel?: string;
   lastUpdated: string;
   netValue?: number;
   estimatedValue?: number;
