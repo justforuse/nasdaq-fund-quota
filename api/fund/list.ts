@@ -9,7 +9,7 @@ const DEFAULT_HEADERS = {
 const NASDAQ_KEYWORDS = ['纳斯达克', '纳指'];
 const EXCLUDE_KEYWORDS = ['标普', '道琼斯', '德国', '法国', '英国', '日本', '日经', '恒生', '越南', '印度'];
 
-const FALLBACK_FUNDS: { code: string; name: string }[] = [
+const KNOWN_FUNDS: { code: string; name: string }[] = [
   { code: '270042', name: '广发纳斯达克100ETF联接人民币A' },
   { code: '160213', name: '国泰纳斯达克100指数' },
   { code: '040046', name: '华安纳斯达克100ETF联接A' },
@@ -32,7 +32,7 @@ const parseNumeric = (val: string | null): number | null => {
   return isNaN(num) ? null : num;
 };
 
-const fetchWithTimeout = async (url: string, options: RequestInit, timeout = 8000): Promise<Response> => {
+const fetchWithTimeout = async (url: string, options: RequestInit, timeout = 5000): Promise<Response> => {
   const controller = new AbortController();
   const timeoutId = setTimeout(() => controller.abort(), timeout);
   try {
@@ -115,7 +115,7 @@ const crawlNasdaqFunds = async (timeoutMs: number): Promise<CrawledFund[]> => {
   };
 
   try {
-    const url = `http://fund.eastmoney.com/Data/Fund_JJJZ_Data.aspx?t=5&page=1,2000&js=var%20reData&sort=fcode,asc`;
+    const url = `http://fund.eastmoney.com/Data/Fund_JJJZ_Data.aspx?t=8&page=1,30000&js=var%20reData&sort=fcode,asc`;
     const res = await fetchWithTimeout(url, { headers }, timeoutMs);
     if (!res.ok) return [];
 
@@ -141,28 +141,68 @@ const crawlNasdaqFunds = async (timeoutMs: number): Promise<CrawledFund[]> => {
   }
 };
 
+const fetchRealtimeData = async (code: string): Promise<{
+  name: string;
+  netValue: number;
+  estimatedValue: number;
+  estimatedChange: number;
+  updateTime: string;
+} | null> => {
+  try {
+    const res = await fetchWithTimeout(
+      `http://fundgz.1234567.com.cn/js/${code}.js`,
+      { headers: { ...DEFAULT_HEADERS, Referer: 'http://fund.eastmoney.com/' } },
+      4000
+    );
+    if (!res.ok) return null;
+    const text = await res.text();
+    const match = text.match(/jsonpgz\((.*)\);/);
+    if (!match || !match[1]) return null;
+    const data = JSON.parse(match[1]);
+    return {
+      name: data.name,
+      netValue: parseFloat(data.dwjz),
+      estimatedValue: parseFloat(data.gsz),
+      estimatedChange: parseFloat(data.gszzl),
+      updateTime: data.gztime,
+    };
+  } catch {
+    return null;
+  }
+};
+
 export default async function handler(
   request: VercelRequest,
   response: VercelResponse
 ) {
+  const startTime = Date.now();
+
   try {
-    const crawledFunds = await crawlNasdaqFunds(8000);
+    const crawlPromise = crawlNasdaqFunds(4000);
+
+    const realtimePromises = KNOWN_FUNDS.map(f => fetchRealtimeData(f.code));
+    const realtimeResults = await Promise.all(realtimePromises);
+
+    const crawledFunds = await crawlPromise;
 
     let fundList: CrawledFund[];
     if (crawledFunds.length > 0) {
       fundList = crawledFunds;
     } else {
-      fundList = FALLBACK_FUNDS.map(f => ({
-        code: f.code,
-        name: f.name,
-        fundType: 'QDII指数型',
-        netValue: null,
-        purchaseStatus: '',
-        dailyLimit: null,
-        isUnlimited: true,
-        isSuspended: false,
-        rate: null,
-      }));
+      fundList = KNOWN_FUNDS.map((f, i) => {
+        const rt = realtimeResults[i];
+        return {
+          code: f.code,
+          name: rt?.name || f.name,
+          fundType: 'QDII指数型',
+          netValue: rt?.netValue || null,
+          purchaseStatus: '',
+          dailyLimit: null,
+          isUnlimited: true,
+          isSuspended: false,
+          rate: rt?.estimatedChange || null,
+        };
+      });
     }
 
     const funds: Fund[] = fundList.map(crawled => {
@@ -173,23 +213,30 @@ export default async function handler(
         crawled.isSuspended
       );
 
+      const knownFund = KNOWN_FUNDS.find(kf => kf.code === crawled.code);
+      const rtIndex = KNOWN_FUNDS.findIndex(kf => kf.code === crawled.code);
+      const rt = rtIndex >= 0 ? realtimeResults[rtIndex] : null;
+
       return {
         id: crawled.code,
         code: crawled.code,
-        name: crawled.name,
+        name: crawled.name || rt?.name || knownFund?.name || '',
         limitStatus: limitInfo.status,
         limitAmount: limitInfo.amount,
         limitNote: limitInfo.note,
         oneYearReturn: 0,
         fundType: crawled.fundType || 'QDII指数型',
-        lastUpdated: new Date().toISOString(),
-        netValue: crawled.netValue,
-        estimatedChange: crawled.rate,
-        rate: crawled.rate,
+        lastUpdated: rt?.updateTime || new Date().toISOString(),
+        netValue: rt?.netValue || crawled.netValue,
+        estimatedValue: rt?.estimatedValue,
+        estimatedChange: rt?.estimatedChange || crawled.rate,
+        rate: rt?.estimatedChange || crawled.rate,
       };
     });
 
     const codes = fundList.map(f => f.code);
+    const elapsed = Date.now() - startTime;
+    console.log(`List API completed in ${elapsed}ms, source: ${crawledFunds.length > 0 ? 'crawl' : 'fallback'}`);
 
     response.setHeader('Cache-Control', 's-maxage=300, stale-while-revalidate=1800');
 
