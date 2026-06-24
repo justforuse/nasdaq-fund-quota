@@ -93,7 +93,7 @@ const parseFundFromRow = (row: string[]): CrawledFund | null => {
     dailyLimit,
     isUnlimited,
     isSuspended,
-    rate: parseNumeric(row[12]),
+    rate: parseNumeric(row[6]),
   };
 };
 
@@ -130,132 +130,64 @@ const crawlNasdaqFunds = async (timeoutMs: number): Promise<CrawledFund[]> => {
   }
 };
 
-const fetchRealtimeData = async (code: string): Promise<any | null> => {
-  try {
-    const apiResponse = await fetchWithTimeout(
-      `http://fundgz.1234567.com.cn/js/${code}.js`,
-      { headers: { ...DEFAULT_HEADERS, Referer: 'http://fund.eastmoney.com/' } },
-      5000
-    );
-    if (!apiResponse.ok) return null;
-    const text = await apiResponse.text();
-    const jsonMatch = text.match(/jsonpgz\((.*)\);/);
-    if (!jsonMatch || !jsonMatch[1]) return null;
-    const data = JSON.parse(jsonMatch[1]);
-    return {
-      code: data.fundcode,
-      name: data.name,
-      netValue: parseFloat(data.dwjz),
-      estimatedValue: parseFloat(data.gsz),
-      estimatedChange: parseFloat(data.gszzl),
-      updateTime: data.gztime,
-    };
-  } catch {
-    return null;
-  }
-};
-
-const fetchDetailData = async (code: string): Promise<any | null> => {
-  try {
-    const apiResponse = await fetchWithTimeout(
-      `http://fund.eastmoney.com/pingzhongdata/${code}.js`,
-      { headers: { ...DEFAULT_HEADERS, Referer: `http://fund.eastmoney.com/${code}.html` } },
-      5000
-    );
-    if (!apiResponse.ok) return null;
-    const text = await apiResponse.text();
-    const extractValue = (pattern: string): string => {
-      const regex = new RegExp(`var ${pattern}\\s*=\\s*"([^"]*)"`, 'i');
-      const match = text.match(regex);
-      return match ? match[1] : '';
-    };
-    return {
-      name: extractValue('fS_name'),
-      oneYearReturn: parseFloat(extractValue('syl_1n')) || 0,
-      sourceRate: parseFloat(extractValue('fund_sourceRate')) || 0,
-      rate: parseFloat(extractValue('fund_Rate')) || 0,
-    };
-  } catch {
-    return null;
-  }
-};
-
 export default async function handler(
   request: VercelRequest,
   response: VercelResponse
 ) {
   try {
-    const crawledFunds = await crawlNasdaqFunds(6000);
+    const crawledFunds = await crawlNasdaqFunds(8000);
 
-    let fundCodes: string[];
-    let crawledMap: Record<string, CrawledFund> = {};
-
+    let fundList: CrawledFund[];
     if (crawledFunds.length > 0) {
-      fundCodes = crawledFunds.map(f => f.code);
-      for (const f of crawledFunds) {
-        crawledMap[f.code] = f;
-      }
+      fundList = crawledFunds;
     } else {
-      fundCodes = FALLBACK_CODES;
+      fundList = FALLBACK_CODES.map(code => ({
+        code,
+        name: '',
+        fundType: 'QDII指数型',
+        netValue: null,
+        purchaseStatus: '',
+        dailyLimit: null,
+        isUnlimited: true,
+        isSuspended: false,
+        rate: null,
+      }));
     }
 
-    const batchSize = 8;
-    const allRealtime: (any | null)[] = [];
-    const allDetail: (any | null)[] = [];
-
-    for (let i = 0; i < fundCodes.length; i += batchSize) {
-      const batch = fundCodes.slice(i, i + batchSize);
-      const [realtimeBatch, detailBatch] = await Promise.all([
-        Promise.all(batch.map(code => fetchRealtimeData(code))),
-        Promise.all(batch.map(code => fetchDetailData(code))),
-      ]);
-      allRealtime.push(...realtimeBatch);
-      allDetail.push(...detailBatch);
-    }
-
-    const funds: Fund[] = fundCodes.map((code, index) => {
-      const crawled = crawledMap[code];
-      const realtime = allRealtime[index];
-      const detail = allDetail[index];
-
-      let limitInfo: { status: FundLimitStatus; amount: number | undefined; note: string };
-
-      if (crawled) {
-        limitInfo = determineLimitStatus(
-          crawled.purchaseStatus,
-          crawled.dailyLimit,
-          crawled.isUnlimited,
-          crawled.isSuspended
-        );
-      } else {
-        limitInfo = { status: 'unlimited', amount: undefined, note: '无限制' };
-      }
+    const funds: Fund[] = fundList.map(crawled => {
+      const limitInfo = determineLimitStatus(
+        crawled.purchaseStatus,
+        crawled.dailyLimit,
+        crawled.isUnlimited,
+        crawled.isSuspended
+      );
 
       return {
-        id: code,
-        code,
-        name: detail?.name || crawled?.name || realtime?.name || '',
+        id: crawled.code,
+        code: crawled.code,
+        name: crawled.name,
         limitStatus: limitInfo.status,
         limitAmount: limitInfo.amount,
         limitNote: limitInfo.note,
-        oneYearReturn: detail?.oneYearReturn || 0,
-        fundType: crawled?.fundType || 'QDII指数型',
-        lastUpdated: realtime?.updateTime || new Date().toISOString(),
-        netValue: realtime?.netValue || crawled?.netValue,
-        estimatedValue: realtime?.estimatedValue,
-        estimatedChange: realtime?.estimatedChange,
-        sourceRate: detail?.sourceRate || crawled?.rate,
-        rate: detail?.rate || crawled?.rate,
+        oneYearReturn: 0,
+        fundType: crawled.fundType || 'QDII指数型',
+        lastUpdated: new Date().toISOString(),
+        netValue: crawled.netValue,
+        estimatedChange: crawled.rate,
+        rate: crawled.rate,
       };
     });
+
+    const codes = fundList.map(f => f.code);
 
     response.setHeader('Cache-Control', 's-maxage=300, stale-while-revalidate=1800');
 
     return response.status(200).json({
       funds,
       lastUpdated: new Date().toISOString(),
-      discoveredCount: crawledFunds.length || fundCodes.length,
+      discoveredCount: fundList.length,
       source: crawledFunds.length > 0 ? 'crawl' : 'fallback',
+      codesForReturns: codes.join(','),
     });
   } catch (error) {
     console.error('获取基金列表失败:', error);

@@ -5,9 +5,10 @@ interface HeaderProps {
   lastUpdated: string | null;
   onRefresh: () => void;
   loading: boolean;
+  returnsLoading?: boolean;
 }
 
-export const Header = ({ lastUpdated, onRefresh, loading }: HeaderProps) => {
+export const Header = ({ lastUpdated, onRefresh, loading, returnsLoading }: HeaderProps) => {
   return (
     <header className="relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-br from-primary-800 via-primary-900 to-dark-bg" />
@@ -40,11 +41,11 @@ export const Header = ({ lastUpdated, onRefresh, loading }: HeaderProps) => {
           
           <button
             onClick={onRefresh}
-            disabled={loading}
+            disabled={loading || returnsLoading}
             className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-400 hover:to-primary-500 text-white font-medium rounded-xl transition-all duration-300 transform hover:scale-105 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 min-h-[44px]"
           >
-            <RefreshCw className={`w-4 h-4 ${loading ? 'animate-spin' : ''}`} />
-            <span>{loading ? '加载中...' : '刷新数据'}</span>
+            <RefreshCw className={`w-4 h-4 ${loading || returnsLoading ? 'animate-spin' : ''}`} />
+            <span>{loading ? '加载中...' : returnsLoading ? '获取收益率...' : '刷新数据'}</span>
           </button>
         </div>
         

@@ -8,6 +8,9 @@
     },
     "api/fund/crawl.ts": {
       "maxDuration": 25
+    },
+    "api/fund/returns.ts": {
+      "maxDuration": 25
     }
   },
   "rewrites": [
