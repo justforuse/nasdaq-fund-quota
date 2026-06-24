@@ -18,7 +18,6 @@ interface DiscoveredFund {
 }
 
 const UNLIMITED_THRESHOLD = 800000000;
-const PAGE_SIZE = 5000;
 const DEFAULT_HEADERS = {
   'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
   'Referer': 'http://fund.eastmoney.com/Fund_sgzt_bzdm.html',
@@ -84,10 +83,10 @@ const parseFundFromRow = (row: string[]): DiscoveredFund | null => {
   };
 };
 
-const fetchPage = async (page: number): Promise<DiscoveredFund[]> => {
+const fetchAllFunds = async (): Promise<DiscoveredFund[]> => {
   try {
-    const url = `http://fund.eastmoney.com/Data/Fund_JJJZ_Data.aspx?t=8&page=${page},${PAGE_SIZE}&js=var%20reData&sort=fcode,asc`;
-    const response = await fetchWithTimeout(url, { headers: DEFAULT_HEADERS }, 12000);
+    const url = `http://fund.eastmoney.com/Data/Fund_JJJZ_Data.aspx?t=8&page=1,30000&js=var%20reData&sort=fcode,asc`;
+    const response = await fetchWithTimeout(url, { headers: DEFAULT_HEADERS }, 20000);
     if (!response.ok) return [];
 
     const text = await response.text();
@@ -100,7 +99,7 @@ const fetchPage = async (page: number): Promise<DiscoveredFund[]> => {
       .map((row: string[]) => parseFundFromRow(row))
       .filter((f: DiscoveredFund | null): f is DiscoveredFund => f !== null);
   } catch (error) {
-    console.error(`Crawl page ${page} failed:`, error);
+    console.error('Crawl failed:', error);
     return [];
   }
 };
@@ -110,53 +109,23 @@ export default async function handler(
   response: VercelResponse
 ) {
   try {
-    const firstPageUrl = `http://fund.eastmoney.com/Data/Fund_JJJZ_Data.aspx?t=8&page=1,${PAGE_SIZE}&js=var%20reData&sort=fcode,asc`;
-    const firstPageRes = await fetchWithTimeout(firstPageUrl, { headers: DEFAULT_HEADERS }, 12000);
-    if (!firstPageRes.ok) {
-      return response.status(502).json({ error: '获取基金数据失败' });
-    }
-
-    const firstPageText = await firstPageRes.text();
-    const totalPagesMatch = firstPageText.match(/pages:"(\d+)"/);
-    const totalPages = totalPagesMatch ? parseInt(totalPagesMatch[1]) : 1;
-
-    const arrMatch = firstPageText.match(/datas:\s*(\[[\s\S]*?\]),\s*record/);
-    if (!arrMatch) {
-      return response.status(502).json({ error: '解析基金数据失败' });
-    }
-
-    const firstPageDatas = JSON.parse(arrMatch[1]);
-    const firstPageNasdaq = firstPageDatas
-      .filter((row: string[]) => isNasdaqFund(row[1] || ''))
-      .map((row: string[]) => parseFundFromRow(row))
-      .filter((f: DiscoveredFund | null): f is DiscoveredFund => f !== null);
-
-    let allNasdaqFunds = [...firstPageNasdaq];
-
-    if (totalPages > 1) {
-      const otherPages = await Promise.all(
-        Array.from({ length: totalPages - 1 }, (_, i) => fetchPage(i + 2))
-      );
-      for (const pageFunds of otherPages) {
-        allNasdaqFunds = allNasdaqFunds.concat(pageFunds);
-      }
-    }
+    const allNasdaqFunds = await fetchAllFunds();
 
     const seen = new Set<string>();
-    allNasdaqFunds = allNasdaqFunds.filter(f => {
+    const deduped = allNasdaqFunds.filter(f => {
       if (seen.has(f.code)) return false;
       seen.add(f.code);
       return true;
     });
 
     const result: Record<string, DiscoveredFund> = {};
-    for (const fund of allNasdaqFunds) {
+    for (const fund of deduped) {
       result[fund.code] = fund;
     }
 
     response.setHeader('Cache-Control', 's-maxage=1800, stale-while-revalidate=7200');
     return response.status(200).json({
-      total: allNasdaqFunds.length,
+      total: deduped.length,
       funds: result,
     });
   } catch (error) {

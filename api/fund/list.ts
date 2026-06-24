@@ -2,7 +2,6 @@ import type { VercelRequest, VercelResponse } from '@vercel/node';
 import type { Fund, FundLimitStatus } from '../../src/types/fund';
 
 const UNLIMITED_THRESHOLD = 800000000;
-const PAGE_SIZE = 5000;
 const DEFAULT_HEADERS = {
   'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
 };
@@ -173,47 +172,22 @@ const crawlNasdaqFunds = async (): Promise<CrawledFund[]> => {
     'Referer': 'http://fund.eastmoney.com/Fund_sgzt_bzdm.html',
   };
 
-  const firstPageUrl = `http://fund.eastmoney.com/Data/Fund_JJJZ_Data.aspx?t=8&page=1,${PAGE_SIZE}&js=var%20reData&sort=fcode,asc`;
-  const firstPageRes = await fetchWithTimeout(firstPageUrl, { headers }, 12000);
-  if (!firstPageRes.ok) return [];
+  const url = `http://fund.eastmoney.com/Data/Fund_JJJZ_Data.aspx?t=8&page=1,30000&js=var%20reData&sort=fcode,asc`;
+  const res = await fetchWithTimeout(url, { headers }, 20000);
+  if (!res.ok) return [];
 
-  const firstPageText = await firstPageRes.text();
-  const totalPagesMatch = firstPageText.match(/pages:"(\d+)"/);
-  const totalPages = totalPagesMatch ? parseInt(totalPagesMatch[1]) : 1;
+  const text = await res.text();
+  const arrMatch = text.match(/datas:\s*(\[[\s\S]*?\]),\s*record/);
+  if (!arrMatch) return [];
 
-  const parsePageNasdaq = (text: string): CrawledFund[] => {
-    const arrMatch = text.match(/datas:\s*(\[[\s\S]*?\]),\s*record/);
-    if (!arrMatch) return [];
-    const datas = JSON.parse(arrMatch[1]);
-    return datas
-      .filter((row: string[]) => isNasdaqFund(row[1] || ''))
-      .map((row: string[]) => parseFundFromRow(row))
-      .filter((f: CrawledFund | null): f is CrawledFund => f !== null);
-  };
-
-  let allNasdaq = parsePageNasdaq(firstPageText);
-
-  if (totalPages > 1) {
-    const otherPagesText = await Promise.all(
-      Array.from({ length: totalPages - 1 }, async (_, i) => {
-        try {
-          const url = `http://fund.eastmoney.com/Data/Fund_JJJZ_Data.aspx?t=8&page=${i + 2},${PAGE_SIZE}&js=var%20reData&sort=fcode,asc`;
-          const res = await fetchWithTimeout(url, { headers }, 12000);
-          return res.ok ? await res.text() : '';
-        } catch {
-          return '';
-        }
-      })
-    );
-    for (const pageText of otherPagesText) {
-      if (pageText) {
-        allNasdaq = allNasdaq.concat(parsePageNasdaq(pageText));
-      }
-    }
-  }
+  const datas = JSON.parse(arrMatch[1]);
+  const nasdaqFunds = datas
+    .filter((row: string[]) => isNasdaqFund(row[1] || ''))
+    .map((row: string[]) => parseFundFromRow(row))
+    .filter((f: CrawledFund | null): f is CrawledFund => f !== null);
 
   const seen = new Set<string>();
-  return allNasdaq.filter(f => {
+  return nasdaqFunds.filter(f => {
     if (seen.has(f.code)) return false;
     seen.add(f.code);
     return true;
