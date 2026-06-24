@@ -6,8 +6,14 @@ const DEFAULT_HEADERS = {
   'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
 };
 
-const NASDAQ_KEYWORDS = ['纳斯达克', '纳指', 'NSDAQ', 'NASDAQ'];
-const EXCLUDE_KEYWORDS = ['标普', 'SPI', 'S&P', '道琼斯', 'Dow Jones', '德国', '法国', '英国', '日本', '日经', '恒生', '越南', '印度'];
+const NASDAQ_KEYWORDS = ['纳斯达克', '纳指'];
+const EXCLUDE_KEYWORDS = ['标普', '道琼斯', '德国', '法国', '英国', '日本', '日经', '恒生', '越南', '印度'];
+
+const FALLBACK_CODES = [
+  '270042', '160213', '040046', '000834', '003722',
+  '006479', '513100', '159659', '007280', '011417',
+  '008766', '004903', '007800', '013308',
+];
 
 const parseNumeric = (val: string | null): number | null => {
   if (!val || val.trim() === '' || val === '---') return null;
@@ -15,7 +21,7 @@ const parseNumeric = (val: string | null): number | null => {
   return isNaN(num) ? null : num;
 };
 
-const fetchWithTimeout = async (url: string, options: RequestInit, timeout = 15000): Promise<Response> => {
+const fetchWithTimeout = async (url: string, options: RequestInit, timeout = 8000): Promise<Response> => {
   const controller = new AbortController();
   const timeoutId = setTimeout(() => controller.abort(), timeout);
   try {
@@ -49,86 +55,16 @@ const determineLimitStatus = (
   return { status: 'unlimited', amount: undefined, note: '无限制' };
 };
 
-const fetchRealtimeData = async (code: string): Promise<any | null> => {
-  try {
-    const apiResponse = await fetchWithTimeout(
-      `http://fundgz.1234567.com.cn/js/${code}.js`,
-      {
-        headers: {
-          ...DEFAULT_HEADERS,
-          Referer: 'http://fund.eastmoney.com/',
-        },
-      },
-      8000
-    );
-    if (!apiResponse.ok) return null;
-    const text = await apiResponse.text();
-    const jsonMatch = text.match(/jsonpgz\((.*)\);/);
-    if (!jsonMatch || !jsonMatch[1]) return null;
-    const data = JSON.parse(jsonMatch[1]);
-    return {
-      code: data.fundcode,
-      name: data.name,
-      netValueDate: data.jzrq,
-      netValue: parseFloat(data.dwjz),
-      estimatedValue: parseFloat(data.gsz),
-      estimatedChange: parseFloat(data.gszzl),
-      updateTime: data.gztime,
-    };
-  } catch (error) {
-    console.error(`Realtime fetch failed ${code}:`, error);
-    return null;
-  }
-};
-
-const fetchDetailData = async (code: string): Promise<any | null> => {
-  try {
-    const apiResponse = await fetchWithTimeout(
-      `http://fund.eastmoney.com/pingzhongdata/${code}.js`,
-      {
-        headers: {
-          ...DEFAULT_HEADERS,
-          Referer: `http://fund.eastmoney.com/${code}.html`,
-        },
-      },
-      8000
-    );
-    if (!apiResponse.ok) return null;
-    const text = await apiResponse.text();
-    const extractValue = (pattern: string): string => {
-      const regex = new RegExp(`var ${pattern}\\s*=\\s*"([^"]*)"`, 'i');
-      const match = text.match(regex);
-      return match ? match[1] : '';
-    };
-    return {
-      name: extractValue('fS_name'),
-      code: extractValue('fS_code'),
-      sourceRate: parseFloat(extractValue('fund_sourceRate')) || 0,
-      rate: parseFloat(extractValue('fund_Rate')) || 0,
-      minPurchase: parseFloat(extractValue('fund_minsg')) || 0,
-      oneYearReturn: parseFloat(extractValue('syl_1n')) || 0,
-    };
-  } catch (error) {
-    console.error(`Detail fetch failed ${code}:`, error);
-    return null;
-  }
-};
-
 interface CrawledFund {
   code: string;
   name: string;
   fundType: string;
   netValue: number | null;
-  netValueDate: string | null;
   purchaseStatus: string;
-  redeemStatus: string;
-  nextOpenDate: string;
-  minPurchase: number | null;
   dailyLimit: number | null;
   isUnlimited: boolean;
   isSuspended: boolean;
   rate: number | null;
-  rateDiscount: number | null;
 }
 
 const parseFundFromRow = (row: string[]): CrawledFund | null => {
@@ -153,45 +89,95 @@ const parseFundFromRow = (row: string[]): CrawledFund | null => {
     name,
     fundType: row[2] || '',
     netValue: parseNumeric(row[3]),
-    netValueDate: row[4] || null,
     purchaseStatus: row[5] || '',
-    redeemStatus: row[6] || '',
-    nextOpenDate: row[7] || '',
-    minPurchase: parseNumeric(row[8]),
     dailyLimit,
     isUnlimited,
     isSuspended,
     rate: parseNumeric(row[12]),
-    rateDiscount: parseNumeric(row[10]),
   };
 };
 
-const crawlNasdaqFunds = async (): Promise<CrawledFund[]> => {
+const crawlNasdaqFunds = async (timeoutMs: number): Promise<CrawledFund[]> => {
   const headers = {
     ...DEFAULT_HEADERS,
     'Referer': 'http://fund.eastmoney.com/Fund_sgzt_bzdm.html',
   };
 
-  const url = `http://fund.eastmoney.com/Data/Fund_JJJZ_Data.aspx?t=8&page=1,30000&js=var%20reData&sort=fcode,asc`;
-  const res = await fetchWithTimeout(url, { headers }, 20000);
-  if (!res.ok) return [];
+  try {
+    const url = `http://fund.eastmoney.com/Data/Fund_JJJZ_Data.aspx?t=8&page=1,30000&js=var%20reData&sort=fcode,asc`;
+    const res = await fetchWithTimeout(url, { headers }, timeoutMs);
+    if (!res.ok) return [];
 
-  const text = await res.text();
-  const arrMatch = text.match(/datas:\s*(\[[\s\S]*?\]),\s*record/);
-  if (!arrMatch) return [];
+    const text = await res.text();
+    const arrMatch = text.match(/datas:\s*(\[[\s\S]*?\]),\s*record/);
+    if (!arrMatch) return [];
 
-  const datas = JSON.parse(arrMatch[1]);
-  const nasdaqFunds = datas
-    .filter((row: string[]) => isNasdaqFund(row[1] || ''))
-    .map((row: string[]) => parseFundFromRow(row))
-    .filter((f: CrawledFund | null): f is CrawledFund => f !== null);
+    const datas = JSON.parse(arrMatch[1]);
+    const nasdaqFunds = datas
+      .filter((row: string[]) => isNasdaqFund(row[1] || ''))
+      .map((row: string[]) => parseFundFromRow(row))
+      .filter((f: CrawledFund | null): f is CrawledFund => f !== null);
 
-  const seen = new Set<string>();
-  return nasdaqFunds.filter(f => {
-    if (seen.has(f.code)) return false;
-    seen.add(f.code);
-    return true;
-  });
+    const seen = new Set<string>();
+    return nasdaqFunds.filter(f => {
+      if (seen.has(f.code)) return false;
+      seen.add(f.code);
+      return true;
+    });
+  } catch (error) {
+    console.error('Crawl failed:', error);
+    return [];
+  }
+};
+
+const fetchRealtimeData = async (code: string): Promise<any | null> => {
+  try {
+    const apiResponse = await fetchWithTimeout(
+      `http://fundgz.1234567.com.cn/js/${code}.js`,
+      { headers: { ...DEFAULT_HEADERS, Referer: 'http://fund.eastmoney.com/' } },
+      5000
+    );
+    if (!apiResponse.ok) return null;
+    const text = await apiResponse.text();
+    const jsonMatch = text.match(/jsonpgz\((.*)\);/);
+    if (!jsonMatch || !jsonMatch[1]) return null;
+    const data = JSON.parse(jsonMatch[1]);
+    return {
+      code: data.fundcode,
+      name: data.name,
+      netValue: parseFloat(data.dwjz),
+      estimatedValue: parseFloat(data.gsz),
+      estimatedChange: parseFloat(data.gszzl),
+      updateTime: data.gztime,
+    };
+  } catch {
+    return null;
+  }
+};
+
+const fetchDetailData = async (code: string): Promise<any | null> => {
+  try {
+    const apiResponse = await fetchWithTimeout(
+      `http://fund.eastmoney.com/pingzhongdata/${code}.js`,
+      { headers: { ...DEFAULT_HEADERS, Referer: `http://fund.eastmoney.com/${code}.html` } },
+      5000
+    );
+    if (!apiResponse.ok) return null;
+    const text = await apiResponse.text();
+    const extractValue = (pattern: string): string => {
+      const regex = new RegExp(`var ${pattern}\\s*=\\s*"([^"]*)"`, 'i');
+      const match = text.match(regex);
+      return match ? match[1] : '';
+    };
+    return {
+      name: extractValue('fS_name'),
+      oneYearReturn: parseFloat(extractValue('syl_1n')) || 0,
+      sourceRate: parseFloat(extractValue('fund_sourceRate')) || 0,
+      rate: parseFloat(extractValue('fund_Rate')) || 0,
+    };
+  } catch {
+    return null;
+  }
 };
 
 export default async function handler(
@@ -199,49 +185,67 @@ export default async function handler(
   response: VercelResponse
 ) {
   try {
-    const nasdaqFunds = await crawlNasdaqFunds();
+    const crawledFunds = await crawlNasdaqFunds(6000);
 
-    if (nasdaqFunds.length === 0) {
-      return response.status(500).json({ error: '未发现纳斯达克基金数据' });
+    let fundCodes: string[];
+    let crawledMap: Record<string, CrawledFund> = {};
+
+    if (crawledFunds.length > 0) {
+      fundCodes = crawledFunds.map(f => f.code);
+      for (const f of crawledFunds) {
+        crawledMap[f.code] = f;
+      }
+    } else {
+      fundCodes = FALLBACK_CODES;
     }
 
-    const fundCodes = nasdaqFunds.map(f => f.code);
+    const batchSize = 8;
+    const allRealtime: (any | null)[] = [];
+    const allDetail: (any | null)[] = [];
 
-    const [realtimeResults, detailResults] = await Promise.all([
-      Promise.all(fundCodes.map(code => fetchRealtimeData(code))),
-      Promise.all(fundCodes.map(code => fetchDetailData(code))),
-    ]);
+    for (let i = 0; i < fundCodes.length; i += batchSize) {
+      const batch = fundCodes.slice(i, i + batchSize);
+      const [realtimeBatch, detailBatch] = await Promise.all([
+        Promise.all(batch.map(code => fetchRealtimeData(code))),
+        Promise.all(batch.map(code => fetchDetailData(code))),
+      ]);
+      allRealtime.push(...realtimeBatch);
+      allDetail.push(...detailBatch);
+    }
 
-    const funds: Fund[] = nasdaqFunds.map((crawled, index) => {
-      const realtime = realtimeResults[index];
-      const detail = detailResults[index];
+    const funds: Fund[] = fundCodes.map((code, index) => {
+      const crawled = crawledMap[code];
+      const realtime = allRealtime[index];
+      const detail = allDetail[index];
 
-      const limitInfo = determineLimitStatus(
-        crawled.purchaseStatus,
-        crawled.dailyLimit,
-        crawled.isUnlimited,
-        crawled.isSuspended
-      );
+      let limitInfo: { status: FundLimitStatus; amount: number | undefined; note: string };
+
+      if (crawled) {
+        limitInfo = determineLimitStatus(
+          crawled.purchaseStatus,
+          crawled.dailyLimit,
+          crawled.isUnlimited,
+          crawled.isSuspended
+        );
+      } else {
+        limitInfo = { status: 'unlimited', amount: undefined, note: '无限制' };
+      }
 
       return {
-        id: crawled.code,
-        code: crawled.code,
-        name: detail?.name || crawled.name,
+        id: code,
+        code,
+        name: detail?.name || crawled?.name || realtime?.name || '',
         limitStatus: limitInfo.status,
         limitAmount: limitInfo.amount,
         limitNote: limitInfo.note,
         oneYearReturn: detail?.oneYearReturn || 0,
-        company: '',
-        establishDate: '',
-        fundSize: 0,
-        fundType: crawled.fundType,
-        riskLevel: '',
-        lastUpdated: realtime?.updateTime || crawled.netValueDate || new Date().toISOString(),
-        netValue: realtime?.netValue || crawled.netValue,
+        fundType: crawled?.fundType || 'QDII指数型',
+        lastUpdated: realtime?.updateTime || new Date().toISOString(),
+        netValue: realtime?.netValue || crawled?.netValue,
         estimatedValue: realtime?.estimatedValue,
         estimatedChange: realtime?.estimatedChange,
-        sourceRate: detail?.sourceRate || crawled.rate,
-        rate: detail?.rate || crawled.rate,
+        sourceRate: detail?.sourceRate || crawled?.rate,
+        rate: detail?.rate || crawled?.rate,
       };
     });
 
@@ -250,7 +254,8 @@ export default async function handler(
     return response.status(200).json({
       funds,
       lastUpdated: new Date().toISOString(),
-      discoveredCount: nasdaqFunds.length,
+      discoveredCount: crawledFunds.length || fundCodes.length,
+      source: crawledFunds.length > 0 ? 'crawl' : 'fallback',
     });
   } catch (error) {
     console.error('获取基金列表失败:', error);
