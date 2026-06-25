@@ -6,12 +6,13 @@
       "name": "广发纳斯达克100ETF联接美元(QDII)A",
       "limitStatus": "unlimited",
       "limitNote": "无限制",
-      "oneYearReturn": 32.42,
+      "oneYearReturn": 30.03,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-25T10:13:41.087Z",
-      "netValue": 1.2045,
-      "estimatedChange": null,
-      "rate": null
+      "lastUpdated": "2026-06-25 22:29",
+      "netValue": 1.1991,
+      "estimatedValue": 1.2017,
+      "estimatedChange": 0.22,
+      "rate": 0.22
     },
     {
       "id": "000834",
@@ -20,13 +21,13 @@
       "limitStatus": "limited",
       "limitAmount": 10,
       "limitNote": "单日限额 10 元",
-      "oneYearReturn": 25.59,
+      "oneYearReturn": 23.28,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-25 04:00",
-      "netValue": 6.3203,
-      "estimatedValue": 6.2943,
-      "estimatedChange": -0.41,
-      "rate": -0.41
+      "lastUpdated": "2026-06-25 22:29",
+      "netValue": 6.2937,
+      "estimatedValue": 6.3076,
+      "estimatedChange": 0.22,
+      "rate": 0.22
     },
     {
       "id": "003722",
@@ -34,13 +35,13 @@
       "name": "易方达纳斯达克100ETF联接(QDII-LOF)A(美元现汇)",
       "limitStatus": "suspended",
       "limitNote": "暂停申购",
-      "oneYearReturn": 31.66,
+      "oneYearReturn": 29.26,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-25 04:00",
-      "netValue": 0.6516,
-      "estimatedValue": 0.6489,
-      "estimatedChange": -0.41,
-      "rate": -0.41
+      "lastUpdated": "2026-06-25 22:29",
+      "netValue": 0.649,
+      "estimatedValue": 0.6504,
+      "estimatedChange": 0.22,
+      "rate": 0.22
     },
     {
       "id": "006479",
@@ -49,13 +50,13 @@
       "limitStatus": "limited",
       "limitAmount": 10,
       "limitNote": "单日限额 10 元",
-      "oneYearReturn": 25.64,
+      "oneYearReturn": 23.5,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-25 04:00",
-      "netValue": 8.0698,
-      "estimatedValue": 8.0366,
-      "estimatedChange": -0.41,
-      "rate": -0.41
+      "lastUpdated": "2026-06-25 22:29",
+      "netValue": 8.0365,
+      "estimatedValue": 8.0542,
+      "estimatedChange": 0.22,
+      "rate": 0.22
     },
     {
       "id": "006480",
@@ -63,13 +64,13 @@
       "name": "广发纳斯达克100ETF联接美元(QDII)C",
       "limitStatus": "unlimited",
       "limitNote": "无限制",
-      "oneYearReturn": 32.16,
+      "oneYearReturn": 29.78,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-25 04:00",
-      "netValue": 1.1838,
-      "estimatedValue": 1.1789,
-      "estimatedChange": -0.41,
-      "rate": -0.41
+      "lastUpdated": "2026-06-25 22:29",
+      "netValue": 1.1785,
+      "estimatedValue": 1.1811,
+      "estimatedChange": 0.22,
+      "rate": 0.22
     },
     {
       "id": "008971",
@@ -78,13 +79,13 @@
       "limitStatus": "limited",
       "limitAmount": 10,
       "limitNote": "单日限额 10 元",
-      "oneYearReturn": 25.21,
+      "oneYearReturn": 22.91,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-25 04:00",
-      "netValue": 6.2645,
-      "estimatedValue": 6.2387,
-      "estimatedChange": -0.41,
-      "rate": -0.41
+      "lastUpdated": "2026-06-25 22:29",
+      "netValue": 6.238,
+      "estimatedValue": 6.2518,
+      "estimatedChange": 0.22,
+      "rate": 0.22
     },
     {
       "id": "012751",
@@ -92,12 +93,13 @@
       "name": "建信纳斯达克100指数(QDII)A美元现汇",
       "limitStatus": "unlimited",
       "limitNote": "无限制",
-      "oneYearReturn": 31.18,
+      "oneYearReturn": 28.87,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-25T10:13:41.100Z",
-      "netValue": 0.5061,
-      "estimatedChange": null,
-      "rate": null
+      "lastUpdated": "2026-06-25 22:29",
+      "netValue": 0.504,
+      "estimatedValue": 0.5051,
+      "estimatedChange": 0.22,
+      "rate": 0.22
     },
     {
       "id": "012752",
@@ -106,13 +108,13 @@
       "limitStatus": "limited",
       "limitAmount": 100,
       "limitNote": "单日限额 100 元",
-      "oneYearReturn": 24.34,
+      "oneYearReturn": 22.25,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-25 04:00",
-      "netValue": 3.3402,
-      "estimatedValue": 3.3264,
-      "estimatedChange": -0.41,
-      "rate": -0.41
+      "lastUpdated": "2026-06-25 22:29",
+      "netValue": 3.3272,
+      "estimatedValue": 3.3345,
+      "estimatedChange": 0.22,
+      "rate": 0.22
     },
     {
       "id": "012753",
@@ -120,13 +122,13 @@
       "name": "建信纳斯达克100指数(QDII)C美元现汇",
       "limitStatus": "unlimited",
       "limitNote": "无限制",
-      "oneYearReturn": 30.81,
+      "oneYearReturn": 28.46,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-25 04:00",
-      "netValue": 0.49,
-      "estimatedValue": 0.488,
-      "estimatedChange": -0.41,
-      "rate": -0.41
+      "lastUpdated": "2026-06-25 22:29",
+      "netValue": 0.4879,
+      "estimatedValue": 0.489,
+      "estimatedChange": 0.22,
+      "rate": 0.22
     },
     {
       "id": "012870",
@@ -134,13 +136,13 @@
       "name": "易方达纳斯达克100ETF联接(QDII-LOF)C(人民币)",
       "limitStatus": "suspended",
       "limitNote": "暂停申购",
-      "oneYearReturn": 24.78,
+      "oneYearReturn": 22.63,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-25 04:00",
-      "netValue": 4.3667,
-      "estimatedValue": 4.3487,
-      "estimatedChange": -0.41,
-      "rate": -0.41
+      "lastUpdated": "2026-06-25 22:29",
+      "netValue": 4.3505,
+      "estimatedValue": 4.3601,
+      "estimatedChange": 0.22,
+      "rate": 0.22
     },
     {
       "id": "012871",
@@ -148,13 +150,13 @@
       "name": "易方达纳斯达克100ETF联接(QDII-LOF)C(美元现汇)",
       "limitStatus": "suspended",
       "limitNote": "暂停申购",
-      "oneYearReturn": 31.27,
+      "oneYearReturn": 28.84,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-25 04:00",
-      "netValue": 0.6406,
-      "estimatedValue": 0.638,
-      "estimatedChange": -0.41,
-      "rate": -0.41
+      "lastUpdated": "2026-06-25 22:29",
+      "netValue": 0.6379,
+      "estimatedValue": 0.6393,
+      "estimatedChange": 0.22,
+      "rate": 0.22
     },
     {
       "id": "014978",
@@ -163,12 +165,13 @@
       "limitStatus": "limited",
       "limitAmount": 10,
       "limitNote": "单日限额 10 元",
-      "oneYearReturn": 26.36,
+      "oneYearReturn": 24.06,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-25T10:13:41.100Z",
-      "netValue": 8.0841,
-      "estimatedChange": null,
-      "rate": null
+      "lastUpdated": "2026-06-25 22:29",
+      "netValue": 8.0503,
+      "estimatedValue": 8.0681,
+      "estimatedChange": 0.22,
+      "rate": 0.22
     },
     {
       "id": "015299",
@@ -176,13 +179,13 @@
       "name": "华夏纳斯达克100ETF发起式联接(QDII)A",
       "limitStatus": "suspended",
       "limitNote": "暂停申购",
-      "oneYearReturn": 26,
+      "oneYearReturn": 24.11,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-25 04:00",
-      "netValue": 2.0392,
-      "estimatedValue": 2.0308,
-      "estimatedChange": -0.41,
-      "rate": -0.41
+      "lastUpdated": "2026-06-25 22:29",
+      "netValue": 2.0356,
+      "estimatedValue": 2.0401,
+      "estimatedChange": 0.22,
+      "rate": 0.22
     },
     {
       "id": "015300",
@@ -190,13 +193,13 @@
       "name": "华夏纳斯达克100ETF发起式联接(QDII)C",
       "limitStatus": "suspended",
       "limitNote": "暂停申购",
-      "oneYearReturn": 25.62,
+      "oneYearReturn": 23.74,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-25 04:00",
-      "netValue": 2.0137,
-      "estimatedValue": 2.0054,
-      "estimatedChange": -0.41,
-      "rate": -0.41
+      "lastUpdated": "2026-06-25 22:29",
+      "netValue": 2.0101,
+      "estimatedValue": 2.0145,
+      "estimatedChange": 0.22,
+      "rate": 0.22
     },
     {
       "id": "015518",
@@ -204,13 +207,13 @@
       "name": "华夏纳斯达克100ETF发起式联接(QDII)A美元现汇",
       "limitStatus": "suspended",
       "limitNote": "暂停申购",
-      "oneYearReturn": 33.44,
+      "oneYearReturn": 30.94,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-25 04:00",
-      "netValue": 0.3005,
-      "estimatedValue": 0.2993,
-      "estimatedChange": -0.41,
-      "rate": -0.41
+      "lastUpdated": "2026-06-25 22:29",
+      "netValue": 0.2992,
+      "estimatedValue": 0.2999,
+      "estimatedChange": 0.22,
+      "rate": 0.22
     },
     {
       "id": "016055",
@@ -218,12 +221,13 @@
       "name": "博时纳斯达克100ETF发起式联接(QDII)A人民币",
       "limitStatus": "suspended",
       "limitNote": "暂停申购",
-      "oneYearReturn": 26.21,
+      "oneYearReturn": 24.04,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-25T10:13:41.100Z",
+      "lastUpdated": "2026-06-25 22:29",
       "netValue": 2.109,
-      "estimatedChange": null,
-      "rate": null
+      "estimatedValue": 2.1137,
+      "estimatedChange": 0.22,
+      "rate": 0.22
     },
     {
       "id": "016056",
@@ -231,12 +235,13 @@
       "name": "博时纳斯达克100ETF发起式联接(QDII)A美元现汇",
       "limitStatus": "suspended",
       "limitNote": "暂停申购",
-      "oneYearReturn": 32.75,
+      "oneYearReturn": 30.34,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-25T10:13:41.100Z",
+      "lastUpdated": "2026-06-25 22:29",
       "netValue": 0.3093,
-      "estimatedChange": null,
-      "rate": null
+      "estimatedValue": 0.31,
+      "estimatedChange": 0.22,
+      "rate": 0.22
     },
     {
       "id": "016057",
@@ -244,12 +249,13 @@
       "name": "博时纳斯达克100ETF发起式联接(QDII)C人民币",
       "limitStatus": "suspended",
       "limitNote": "暂停申购",
-      "oneYearReturn": 25.84,
+      "oneYearReturn": 23.68,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-25T10:13:41.100Z",
+      "lastUpdated": "2026-06-25 22:29",
       "netValue": 2.0827,
-      "estimatedChange": null,
-      "rate": null
+      "estimatedValue": 2.0873,
+      "estimatedChange": 0.22,
+      "rate": 0.22
     },
     {
       "id": "016058",
@@ -257,13 +263,13 @@
       "name": "博时纳斯达克100ETF发起式联接(QDII)C美元现汇",
       "limitStatus": "suspended",
       "limitNote": "暂停申购",
-      "oneYearReturn": 32.33,
+      "oneYearReturn": 29.96,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-25 04:00",
-      "netValue": 0.3066,
-      "estimatedValue": 0.3053,
-      "estimatedChange": -0.41,
-      "rate": -0.41
+      "lastUpdated": "2026-06-25 22:29",
+      "netValue": 0.3054,
+      "estimatedValue": 0.3061,
+      "estimatedChange": 0.22,
+      "rate": 0.22
     },
     {
       "id": "016452",
@@ -272,13 +278,13 @@
       "limitStatus": "limited",
       "limitAmount": 50,
       "limitNote": "单日限额 50 元",
-      "oneYearReturn": 25.15,
+      "oneYearReturn": 22.97,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-25 04:00",
-      "netValue": 2.2913,
-      "estimatedValue": 2.2819,
-      "estimatedChange": -0.41,
-      "rate": -0.41
+      "lastUpdated": "2026-06-25 22:29",
+      "netValue": 2.2823,
+      "estimatedValue": 2.2873,
+      "estimatedChange": 0.22,
+      "rate": 0.22
     },
     {
       "id": "016453",
@@ -287,12 +293,13 @@
       "limitStatus": "limited",
       "limitAmount": 50,
       "limitNote": "单日限额 50 元",
-      "oneYearReturn": 25.03,
+      "oneYearReturn": 22.85,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-25T10:13:41.100Z",
-      "netValue": 2.2816,
-      "estimatedChange": null,
-      "rate": null
+      "lastUpdated": "2026-06-25 22:29",
+      "netValue": 2.2726,
+      "estimatedValue": 2.2776,
+      "estimatedChange": 0.22,
+      "rate": 0.22
     },
     {
       "id": "016532",
@@ -300,13 +307,13 @@
       "name": "嘉实纳斯达克100ETF发起联接(QDII)A人民币",
       "limitStatus": "suspended",
       "limitNote": "暂停申购",
-      "oneYearReturn": 25.27,
+      "oneYearReturn": 23.09,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-25 04:00",
-      "netValue": 2.1696,
-      "estimatedValue": 2.1607,
-      "estimatedChange": -0.41,
-      "rate": -0.41
+      "lastUpdated": "2026-06-25 22:29",
+      "netValue": 2.1611,
+      "estimatedValue": 2.1659,
+      "estimatedChange": 0.22,
+      "rate": 0.22
     },
     {
       "id": "016533",
@@ -314,12 +321,13 @@
       "name": "嘉实纳斯达克100ETF发起联接(QDII)C人民币",
       "limitStatus": "suspended",
       "limitNote": "暂停申购",
-      "oneYearReturn": 24.96,
+      "oneYearReturn": 22.79,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-25T10:13:41.100Z",
+      "lastUpdated": "2026-06-25 22:29",
       "netValue": 2.1377,
-      "estimatedChange": null,
-      "rate": null
+      "estimatedValue": 2.1424,
+      "estimatedChange": 0.22,
+      "rate": 0.22
     },
     {
       "id": "016534",
@@ -327,13 +335,13 @@
       "name": "嘉实纳斯达克100ETF发起联接(QDII)A美元现汇",
       "limitStatus": "suspended",
       "limitNote": "暂停申购",
-      "oneYearReturn": 31.8,
+      "oneYearReturn": 29.35,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-25 04:00",
-      "netValue": 0.3183,
-      "estimatedValue": 0.317,
-      "estimatedChange": -0.41,
-      "rate": -0.41
+      "lastUpdated": "2026-06-25 22:29",
+      "netValue": 0.3169,
+      "estimatedValue": 0.3176,
+      "estimatedChange": 0.22,
+      "rate": 0.22
     },
     {
       "id": "016535",
@@ -341,13 +349,13 @@
       "name": "嘉实纳斯达克100ETF发起联接(QDII)C美元现汇",
       "limitStatus": "suspended",
       "limitNote": "暂停申购",
-      "oneYearReturn": 31.44,
+      "oneYearReturn": 29.01,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-25 04:00",
-      "netValue": 0.3148,
-      "estimatedValue": 0.3135,
-      "estimatedChange": -0.41,
-      "rate": -0.41
+      "lastUpdated": "2026-06-25 22:29",
+      "netValue": 0.3135,
+      "estimatedValue": 0.3142,
+      "estimatedChange": 0.22,
+      "rate": 0.22
     },
     {
       "id": "017091",
@@ -355,12 +363,13 @@
       "name": "景顺长城纳斯达克科技ETF联接(QDII)A人民币",
       "limitStatus": "suspended",
       "limitNote": "暂停申购",
-      "oneYearReturn": 38.89,
+      "oneYearReturn": 35.92,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-25T10:13:41.100Z",
-      "netValue": 2.7979,
-      "estimatedChange": null,
-      "rate": null
+      "lastUpdated": "2026-06-25 22:29",
+      "netValue": 2.7816,
+      "estimatedValue": 2.8185,
+      "estimatedChange": 1.33,
+      "rate": 1.33
     },
     {
       "id": "017092",
@@ -368,13 +377,13 @@
       "name": "景顺长城纳斯达克科技ETF联接(QDII)A美元现汇",
       "limitStatus": "suspended",
       "limitNote": "暂停申购",
-      "oneYearReturn": 46.1,
+      "oneYearReturn": 42.82,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-25 04:00",
-      "netValue": 0.4104,
-      "estimatedValue": 0.4116,
-      "estimatedChange": 0.3,
-      "rate": 0.3
+      "lastUpdated": "2026-06-25 22:29",
+      "netValue": 0.4079,
+      "estimatedValue": 0.4133,
+      "estimatedChange": 1.33,
+      "rate": 1.33
     },
     {
       "id": "017093",
@@ -382,12 +391,13 @@
       "name": "景顺长城纳斯达克科技ETF联接(QDII)C人民币",
       "limitStatus": "suspended",
       "limitNote": "暂停申购",
-      "oneYearReturn": 38.33,
+      "oneYearReturn": 35.38,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-25T10:13:41.100Z",
-      "netValue": 2.7559,
-      "estimatedChange": null,
-      "rate": null
+      "lastUpdated": "2026-06-25 22:29",
+      "netValue": 2.7398,
+      "estimatedValue": 2.7761,
+      "estimatedChange": 1.33,
+      "rate": 1.33
     },
     {
       "id": "017436",
@@ -398,11 +408,11 @@
       "limitNote": "单日限额 1,000 元",
       "oneYearReturn": 18.61,
       "fundType": "QDII-普通股票",
-      "lastUpdated": "2026-06-25 04:00",
-      "netValue": 2.3138,
-      "estimatedValue": 2.3207,
-      "estimatedChange": 0.3,
-      "rate": 0.3
+      "lastUpdated": "2026-06-25 22:29",
+      "netValue": 2.2948,
+      "estimatedValue": 2.3251,
+      "estimatedChange": 1.32,
+      "rate": 1.32
     },
     {
       "id": "017437",
@@ -413,11 +423,11 @@
       "limitNote": "单日限额 1,000 元",
       "oneYearReturn": 18.15,
       "fundType": "QDII-普通股票",
-      "lastUpdated": "2026-06-25 04:00",
-      "netValue": 2.2853,
-      "estimatedValue": 2.2921,
-      "estimatedChange": 0.3,
-      "rate": 0.3
+      "lastUpdated": "2026-06-25 22:29",
+      "netValue": 2.2665,
+      "estimatedValue": 2.2964,
+      "estimatedChange": 1.32,
+      "rate": 1.32
     },
     {
       "id": "017894",
@@ -426,10 +436,10 @@
       "limitStatus": "limited",
       "limitAmount": 5000,
       "limitNote": "单日限额 5,000 元",
-      "oneYearReturn": 36.23,
+      "oneYearReturn": 35.71,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-25T10:13:41.100Z",
-      "netValue": 1.4323,
+      "lastUpdated": "2026-06-25T15:38:07.280Z",
+      "netValue": 1.4518,
       "estimatedChange": null,
       "rate": null
     },
@@ -440,10 +450,10 @@
       "limitStatus": "limited",
       "limitAmount": 5000,
       "limitNote": "单日限额 5,000 元",
-      "oneYearReturn": 35.89,
+      "oneYearReturn": 35.36,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-25T10:13:41.100Z",
-      "netValue": 1.4214,
+      "lastUpdated": "2026-06-25T15:38:07.280Z",
+      "netValue": 1.4408,
       "estimatedChange": null,
       "rate": null
     },
@@ -453,10 +463,10 @@
       "name": "汇添富纳斯达克生物科技ETF发起式联接(QDII)美元现汇",
       "limitStatus": "suspended",
       "limitNote": "暂停申购",
-      "oneYearReturn": 43.25,
+      "oneYearReturn": 42.55,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-25T10:13:41.100Z",
-      "netValue": 1.4506,
+      "lastUpdated": "2026-06-25T15:38:07.280Z",
+      "netValue": 1.4698,
       "estimatedChange": null,
       "rate": null
     },
@@ -466,10 +476,10 @@
       "name": "汇添富纳斯达克生物科技ETF发起式联接(QDII)美元现钞",
       "limitStatus": "suspended",
       "limitNote": "暂停申购",
-      "oneYearReturn": 43.25,
+      "oneYearReturn": 42.55,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-25T10:13:41.100Z",
-      "netValue": 1.4506,
+      "lastUpdated": "2026-06-25T15:38:07.280Z",
+      "netValue": 1.4698,
       "estimatedChange": null,
       "rate": null
     },
@@ -479,12 +489,13 @@
       "name": "天弘纳斯达克100指数发起(QDII)A",
       "limitStatus": "suspended",
       "limitNote": "暂停申购",
-      "oneYearReturn": 25.72,
+      "oneYearReturn": 23.55,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-25T10:13:41.100Z",
-      "netValue": 2.0372,
-      "estimatedChange": null,
-      "rate": null
+      "lastUpdated": "2026-06-25 22:29",
+      "netValue": 2.0295,
+      "estimatedValue": 2.034,
+      "estimatedChange": 0.22,
+      "rate": 0.22
     },
     {
       "id": "018044",
@@ -492,13 +503,13 @@
       "name": "天弘纳斯达克100指数发起(QDII)C",
       "limitStatus": "suspended",
       "limitNote": "暂停申购",
-      "oneYearReturn": 25.48,
+      "oneYearReturn": 23.32,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-25 04:00",
-      "netValue": 2.0208,
-      "estimatedValue": 2.0125,
-      "estimatedChange": -0.41,
-      "rate": -0.41
+      "lastUpdated": "2026-06-25 22:29",
+      "netValue": 2.0131,
+      "estimatedValue": 2.0175,
+      "estimatedChange": 0.22,
+      "rate": 0.22
     },
     {
       "id": "018966",
@@ -507,13 +518,13 @@
       "limitStatus": "limited",
       "limitAmount": 100,
       "limitNote": "单日限额 100 元",
-      "oneYearReturn": 23.82,
+      "oneYearReturn": 21.68,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-25 04:00",
-      "netValue": 1.6486,
-      "estimatedValue": 1.6418,
-      "estimatedChange": -0.41,
-      "rate": -0.41
+      "lastUpdated": "2026-06-25 22:29",
+      "netValue": 1.6423,
+      "estimatedValue": 1.6459,
+      "estimatedChange": 0.22,
+      "rate": 0.22
     },
     {
       "id": "018967",
@@ -522,13 +533,13 @@
       "limitStatus": "limited",
       "limitAmount": 100,
       "limitNote": "单日限额 100 元",
-      "oneYearReturn": 23.32,
+      "oneYearReturn": 21.19,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-25 04:00",
-      "netValue": 1.6299,
-      "estimatedValue": 1.6232,
-      "estimatedChange": -0.41,
-      "rate": -0.41
+      "lastUpdated": "2026-06-25 22:29",
+      "netValue": 1.6237,
+      "estimatedValue": 1.6273,
+      "estimatedChange": 0.22,
+      "rate": 0.22
     },
     {
       "id": "018968",
@@ -536,13 +547,13 @@
       "name": "汇添富纳斯达克100ETF发起式联接(QDII)美元现汇",
       "limitStatus": "suspended",
       "limitNote": "暂停申购",
-      "oneYearReturn": 30.25,
+      "oneYearReturn": 27.85,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-25 04:00",
-      "netValue": 1.7367,
-      "estimatedValue": 1.7295,
-      "estimatedChange": -0.41,
-      "rate": -0.41
+      "lastUpdated": "2026-06-25 22:29",
+      "netValue": 1.7294,
+      "estimatedValue": 1.7332,
+      "estimatedChange": 0.22,
+      "rate": 0.22
     },
     {
       "id": "018969",
@@ -550,13 +561,13 @@
       "name": "汇添富纳斯达克100ETF发起式联接(QDII)美元现钞",
       "limitStatus": "suspended",
       "limitNote": "暂停申购",
-      "oneYearReturn": 30.25,
+      "oneYearReturn": 27.85,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-25 04:00",
-      "netValue": 1.7367,
-      "estimatedValue": 1.7295,
-      "estimatedChange": -0.41,
-      "rate": -0.41
+      "lastUpdated": "2026-06-25 22:29",
+      "netValue": 1.7294,
+      "estimatedValue": 1.7332,
+      "estimatedChange": 0.22,
+      "rate": 0.22
     },
     {
       "id": "019118",
@@ -564,13 +575,13 @@
       "name": "景顺长城纳斯达克科技ETF联接(QDII)E人民币",
       "limitStatus": "suspended",
       "limitNote": "暂停申购",
-      "oneYearReturn": 38.61,
+      "oneYearReturn": 35.65,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-25 04:00",
-      "netValue": 2.7795,
-      "estimatedValue": 2.7878,
-      "estimatedChange": 0.3,
-      "rate": 0.3
+      "lastUpdated": "2026-06-25 22:29",
+      "netValue": 2.7633,
+      "estimatedValue": 2.7999,
+      "estimatedChange": 1.33,
+      "rate": 1.33
     },
     {
       "id": "019172",
@@ -579,13 +590,13 @@
       "limitStatus": "limited",
       "limitAmount": 10,
       "limitNote": "单日限额 10 元",
-      "oneYearReturn": 25.71,
+      "oneYearReturn": 23.57,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-25 04:00",
-      "netValue": 1.7507,
-      "estimatedValue": 1.7435,
-      "estimatedChange": -0.41,
-      "rate": -0.41
+      "lastUpdated": "2026-06-25 22:29",
+      "netValue": 1.7445,
+      "estimatedValue": 1.7483,
+      "estimatedChange": 0.22,
+      "rate": 0.22
     },
     {
       "id": "019173",
@@ -594,13 +605,13 @@
       "limitStatus": "limited",
       "limitAmount": 10,
       "limitNote": "单日限额 10 元",
-      "oneYearReturn": 25.33,
+      "oneYearReturn": 23.2,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-25 04:00",
-      "netValue": 1.7356,
-      "estimatedValue": 1.7285,
-      "estimatedChange": -0.41,
-      "rate": -0.41
+      "lastUpdated": "2026-06-25 22:29",
+      "netValue": 1.7294,
+      "estimatedValue": 1.7332,
+      "estimatedChange": 0.22,
+      "rate": 0.22
     },
     {
       "id": "019174",
@@ -608,13 +619,13 @@
       "name": "摩根纳斯达克100指数(QDII)美元现汇A",
       "limitStatus": "unlimited",
       "limitNote": "无限制",
-      "oneYearReturn": 32.24,
+      "oneYearReturn": 29.84,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-25 04:00",
-      "netValue": 1.8353,
-      "estimatedValue": 1.8277,
-      "estimatedChange": -0.41,
-      "rate": -0.41
+      "lastUpdated": "2026-06-25 22:29",
+      "netValue": 1.8281,
+      "estimatedValue": 1.8321,
+      "estimatedChange": 0.22,
+      "rate": 0.22
     },
     {
       "id": "019175",
@@ -622,12 +633,13 @@
       "name": "摩根纳斯达克100指数(QDII)美元现汇C",
       "limitStatus": "unlimited",
       "limitNote": "无限制",
-      "oneYearReturn": 31.83,
+      "oneYearReturn": 29.44,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-25T10:13:41.100Z",
-      "netValue": 1.8281,
-      "estimatedChange": null,
-      "rate": null
+      "lastUpdated": "2026-06-25 22:29",
+      "netValue": 1.8209,
+      "estimatedValue": 1.8249,
+      "estimatedChange": 0.22,
+      "rate": 0.22
     },
     {
       "id": "019441",
@@ -636,12 +648,13 @@
       "limitStatus": "limited",
       "limitAmount": 50,
       "limitNote": "单日限额 50 元",
-      "oneYearReturn": 25.73,
+      "oneYearReturn": 23.72,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-25T10:13:41.100Z",
-      "netValue": 1.6916,
-      "estimatedChange": null,
-      "rate": null
+      "lastUpdated": "2026-06-25 22:29",
+      "netValue": 1.6872,
+      "estimatedValue": 1.6909,
+      "estimatedChange": 0.22,
+      "rate": 0.22
     },
     {
       "id": "019442",
@@ -650,13 +663,13 @@
       "limitStatus": "limited",
       "limitAmount": 50,
       "limitNote": "单日限额 50 元",
-      "oneYearReturn": 25.47,
+      "oneYearReturn": 23.47,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-25 04:00",
-      "netValue": 1.6812,
-      "estimatedValue": 1.6743,
-      "estimatedChange": -0.41,
-      "rate": -0.41
+      "lastUpdated": "2026-06-25 22:29",
+      "netValue": 1.6768,
+      "estimatedValue": 1.6805,
+      "estimatedChange": 0.22,
+      "rate": 0.22
     },
     {
       "id": "019524",
@@ -665,13 +678,13 @@
       "limitStatus": "limited",
       "limitAmount": 10,
       "limitNote": "单日限额 10 元",
-      "oneYearReturn": 24.74,
+      "oneYearReturn": 22.6,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-25 04:00",
-      "netValue": 1.6499,
-      "estimatedValue": 1.6431,
-      "estimatedChange": -0.41,
-      "rate": -0.41
+      "lastUpdated": "2026-06-25 22:29",
+      "netValue": 1.6439,
+      "estimatedValue": 1.6475,
+      "estimatedChange": 0.22,
+      "rate": 0.22
     },
     {
       "id": "019525",
@@ -680,13 +693,13 @@
       "limitStatus": "limited",
       "limitAmount": 10,
       "limitNote": "单日限额 10 元",
-      "oneYearReturn": 24.42,
+      "oneYearReturn": 22.29,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-25 04:00",
-      "netValue": 1.6368,
-      "estimatedValue": 1.6301,
-      "estimatedChange": -0.41,
-      "rate": -0.41
+      "lastUpdated": "2026-06-25 22:29",
+      "netValue": 1.6308,
+      "estimatedValue": 1.6344,
+      "estimatedChange": 0.22,
+      "rate": 0.22
     },
     {
       "id": "019547",
@@ -695,12 +708,13 @@
       "limitStatus": "limited",
       "limitAmount": 10,
       "limitNote": "单日限额 10 元",
-      "oneYearReturn": 25.31,
+      "oneYearReturn": 23.2,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-25T10:13:41.100Z",
-      "netValue": 1.5733,
-      "estimatedChange": null,
-      "rate": null
+      "lastUpdated": "2026-06-25 22:29",
+      "netValue": 1.5678,
+      "estimatedValue": 1.5713,
+      "estimatedChange": 0.22,
+      "rate": 0.22
     },
     {
       "id": "019548",
@@ -709,13 +723,13 @@
       "limitStatus": "limited",
       "limitAmount": 10,
       "limitNote": "单日限额 10 元",
-      "oneYearReturn": 24.81,
+      "oneYearReturn": 22.71,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-25 04:00",
-      "netValue": 1.5574,
-      "estimatedValue": 1.551,
-      "estimatedChange": -0.41,
-      "rate": -0.41
+      "lastUpdated": "2026-06-25 22:29",
+      "netValue": 1.552,
+      "estimatedValue": 1.5554,
+      "estimatedChange": 0.22,
+      "rate": 0.22
     },
     {
       "id": "019736",
@@ -724,13 +738,13 @@
       "limitStatus": "limited",
       "limitAmount": 10,
       "limitNote": "单日限额 10 元",
-      "oneYearReturn": 24.98,
+      "oneYearReturn": 22.81,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-25 04:00",
-      "netValue": 1.4909,
-      "estimatedValue": 1.4848,
-      "estimatedChange": -0.41,
-      "rate": -0.41
+      "lastUpdated": "2026-06-25 22:29",
+      "netValue": 1.4853,
+      "estimatedValue": 1.4886,
+      "estimatedChange": 0.22,
+      "rate": 0.22
     },
     {
       "id": "019737",
@@ -739,13 +753,13 @@
       "limitStatus": "limited",
       "limitAmount": 10,
       "limitNote": "单日限额 10 元",
-      "oneYearReturn": 24.67,
+      "oneYearReturn": 22.52,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-25 04:00",
-      "netValue": 1.4812,
-      "estimatedValue": 1.4751,
-      "estimatedChange": -0.41,
-      "rate": -0.41
+      "lastUpdated": "2026-06-25 22:29",
+      "netValue": 1.4757,
+      "estimatedValue": 1.479,
+      "estimatedChange": 0.22,
+      "rate": 0.22
     },
     {
       "id": "019738",
@@ -755,7 +769,7 @@
       "limitNote": "无限制",
       "oneYearReturn": 0,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-25T10:13:41.100Z",
+      "lastUpdated": "2026-06-25T15:38:07.280Z",
       "netValue": null,
       "estimatedChange": null,
       "rate": null
@@ -768,7 +782,7 @@
       "limitNote": "无限制",
       "oneYearReturn": 0,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-25T10:13:41.100Z",
+      "lastUpdated": "2026-06-25T15:38:07.280Z",
       "netValue": null,
       "estimatedChange": null,
       "rate": null
@@ -779,13 +793,13 @@
       "name": "南方纳斯达克100指数发起(QDII)I",
       "limitStatus": "unlimited",
       "limitNote": "无限制",
-      "oneYearReturn": 25.1,
+      "oneYearReturn": 22.92,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-25 04:00",
-      "netValue": 2.2916,
-      "estimatedValue": 2.2822,
-      "estimatedChange": -0.41,
-      "rate": -0.41
+      "lastUpdated": "2026-06-25 22:29",
+      "netValue": 2.2826,
+      "estimatedValue": 2.2876,
+      "estimatedChange": 0.22,
+      "rate": 0.22
     },
     {
       "id": "021773",
@@ -794,13 +808,13 @@
       "limitStatus": "limited",
       "limitAmount": 100,
       "limitNote": "单日限额 100 元",
-      "oneYearReturn": 23.69,
+      "oneYearReturn": 21.56,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-25 04:00",
-      "netValue": 1.6455,
-      "estimatedValue": 1.6387,
-      "estimatedChange": -0.41,
-      "rate": -0.41
+      "lastUpdated": "2026-06-25 22:29",
+      "netValue": 1.6392,
+      "estimatedValue": 1.6428,
+      "estimatedChange": 0.22,
+      "rate": 0.22
     },
     {
       "id": "021778",
@@ -808,12 +822,13 @@
       "name": "广发纳指100ETF联接(QDII)人民币F",
       "limitStatus": "unlimited",
       "limitNote": "无限制",
-      "oneYearReturn": 25.66,
+      "oneYearReturn": 23.52,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-25T10:13:41.100Z",
-      "netValue": 8.1842,
-      "estimatedChange": null,
-      "rate": null
+      "lastUpdated": "2026-06-25 22:29",
+      "netValue": 8.1505,
+      "estimatedValue": 8.1685,
+      "estimatedChange": 0.22,
+      "rate": 0.22
     },
     {
       "id": "021838",
@@ -821,12 +836,13 @@
       "name": "嘉实纳斯达克100ETF发起联接(QDII)I人民币",
       "limitStatus": "suspended",
       "limitNote": "暂停申购",
-      "oneYearReturn": 24.95,
+      "oneYearReturn": 22.78,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-25T10:13:41.100Z",
+      "lastUpdated": "2026-06-25 22:29",
       "netValue": 2.1424,
-      "estimatedChange": null,
-      "rate": null
+      "estimatedValue": 2.1471,
+      "estimatedChange": 0.22,
+      "rate": 0.22
     },
     {
       "id": "022525",
@@ -834,13 +850,13 @@
       "name": "天弘纳斯达克100指数发起(QDII)D",
       "limitStatus": "suspended",
       "limitNote": "暂停申购",
-      "oneYearReturn": 25.48,
+      "oneYearReturn": 23.32,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-25 04:00",
-      "netValue": 2.0167,
-      "estimatedValue": 2.0084,
-      "estimatedChange": -0.41,
-      "rate": -0.41
+      "lastUpdated": "2026-06-25 22:29",
+      "netValue": 2.0091,
+      "estimatedValue": 2.0135,
+      "estimatedChange": 0.22,
+      "rate": 0.22
     },
     {
       "id": "022664",
@@ -849,13 +865,13 @@
       "limitStatus": "limited",
       "limitAmount": 10,
       "limitNote": "单日限额 10 元",
-      "oneYearReturn": 24.57,
+      "oneYearReturn": 22.42,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-25 04:00",
-      "netValue": 1.648,
-      "estimatedValue": 1.6412,
-      "estimatedChange": -0.41,
-      "rate": -0.41
+      "lastUpdated": "2026-06-25 22:29",
+      "netValue": 1.642,
+      "estimatedValue": 1.6456,
+      "estimatedChange": 0.22,
+      "rate": 0.22
     },
     {
       "id": "023422",
@@ -864,12 +880,13 @@
       "limitStatus": "limited",
       "limitAmount": 100,
       "limitNote": "单日限额 100 元",
-      "oneYearReturn": 24.34,
+      "oneYearReturn": 22.25,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-25T10:13:41.100Z",
-      "netValue": 3.3561,
-      "estimatedChange": null,
-      "rate": null
+      "lastUpdated": "2026-06-25 22:29",
+      "netValue": 3.343,
+      "estimatedValue": 3.3504,
+      "estimatedChange": 0.22,
+      "rate": 0.22
     },
     {
       "id": "024237",
@@ -877,13 +894,13 @@
       "name": "博时纳斯达克100ETF发起式联接(QDII)I人民币",
       "limitStatus": "suspended",
       "limitNote": "暂停申购",
-      "oneYearReturn": 25.99,
+      "oneYearReturn": 23.84,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-25 04:00",
-      "netValue": 2.1129,
-      "estimatedValue": 2.1042,
-      "estimatedChange": -0.41,
-      "rate": -0.41
+      "lastUpdated": "2026-06-25 22:29",
+      "netValue": 2.1051,
+      "estimatedValue": 2.1097,
+      "estimatedChange": 0.22,
+      "rate": 0.22
     },
     {
       "id": "040046",
@@ -892,13 +909,13 @@
       "limitStatus": "limited",
       "limitAmount": 10,
       "limitNote": "单日限额 10 元",
-      "oneYearReturn": 26.61,
+      "oneYearReturn": 24.3,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-25 04:00",
-      "netValue": 8.2512,
-      "estimatedValue": 8.2172,
-      "estimatedChange": -0.41,
-      "rate": -0.41
+      "lastUpdated": "2026-06-25 22:29",
+      "netValue": 8.2169,
+      "estimatedValue": 8.235,
+      "estimatedChange": 0.22,
+      "rate": 0.22
     },
     {
       "id": "040047",
@@ -906,12 +923,13 @@
       "name": "华安纳斯达克100ETF联接(QDII)A美元现钞",
       "limitStatus": "suspended",
       "limitNote": "暂停申购",
-      "oneYearReturn": 33.19,
+      "oneYearReturn": 30.61,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-25T10:13:41.100Z",
-      "netValue": 1.2104,
-      "estimatedChange": null,
-      "rate": null
+      "lastUpdated": "2026-06-25 22:29",
+      "netValue": 1.2049,
+      "estimatedValue": 1.2076,
+      "estimatedChange": 0.22,
+      "rate": 0.22
     },
     {
       "id": "040048",
@@ -919,13 +937,13 @@
       "name": "华安纳斯达克100ETF联接(QDII)A美元现汇",
       "limitStatus": "suspended",
       "limitNote": "暂停申购",
-      "oneYearReturn": 33.19,
+      "oneYearReturn": 30.61,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-25 04:00",
-      "netValue": 1.2104,
-      "estimatedValue": 1.2054,
-      "estimatedChange": -0.41,
-      "rate": -0.41
+      "lastUpdated": "2026-06-25 22:29",
+      "netValue": 1.2049,
+      "estimatedValue": 1.2076,
+      "estimatedChange": 0.22,
+      "rate": 0.22
     },
     {
       "id": "159501",
@@ -933,13 +951,13 @@
       "name": "纳指ETF嘉实",
       "limitStatus": "unlimited",
       "limitNote": "无限制",
-      "oneYearReturn": 27.37,
+      "oneYearReturn": 25.04,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-25 04:00",
-      "netValue": 1.8745,
-      "estimatedValue": 1.8668,
-      "estimatedChange": -0.41,
-      "rate": -0.41
+      "lastUpdated": "2026-06-25 22:29",
+      "netValue": 1.8669,
+      "estimatedValue": 1.871,
+      "estimatedChange": 0.22,
+      "rate": 0.22
     },
     {
       "id": "159509",
@@ -947,12 +965,13 @@
       "name": "纳指科技ETF景顺",
       "limitStatus": "unlimited",
       "limitNote": "无限制",
-      "oneYearReturn": 44.15,
+      "oneYearReturn": 40.89,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-25T10:13:41.100Z",
-      "netValue": 2.2208,
-      "estimatedChange": null,
-      "rate": null
+      "lastUpdated": "2026-06-25 22:29",
+      "netValue": 2.207,
+      "estimatedValue": 2.2371,
+      "estimatedChange": 1.36,
+      "rate": 1.36
     },
     {
       "id": "159513",
@@ -960,13 +979,13 @@
       "name": "纳斯达克100ETF大成",
       "limitStatus": "unlimited",
       "limitNote": "无限制",
-      "oneYearReturn": 26.52,
+      "oneYearReturn": 24.18,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-25 04:00",
-      "netValue": 1.6672,
-      "estimatedValue": 1.6603,
-      "estimatedChange": -0.41,
-      "rate": -0.41
+      "lastUpdated": "2026-06-25 22:29",
+      "netValue": 1.6601,
+      "estimatedValue": 1.6638,
+      "estimatedChange": 0.22,
+      "rate": 0.22
     },
     {
       "id": "159632",
@@ -974,13 +993,13 @@
       "name": "纳斯达克ETF华安",
       "limitStatus": "unlimited",
       "limitNote": "无限制",
-      "oneYearReturn": 27.19,
+      "oneYearReturn": 24.86,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-25 04:00",
-      "netValue": 2.266,
-      "estimatedValue": 2.2567,
-      "estimatedChange": -0.41,
-      "rate": -0.41
+      "lastUpdated": "2026-06-25 22:29",
+      "netValue": 2.2568,
+      "estimatedValue": 2.2618,
+      "estimatedChange": 0.22,
+      "rate": 0.22
     },
     {
       "id": "159659",
@@ -988,13 +1007,13 @@
       "name": "纳斯达克100ETF招商",
       "limitStatus": "unlimited",
       "limitNote": "无限制",
-      "oneYearReturn": 27.56,
+      "oneYearReturn": 25.29,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-25 04:00",
-      "netValue": 2.1539,
-      "estimatedValue": 2.145,
-      "estimatedChange": -0.41,
-      "rate": -0.41
+      "lastUpdated": "2026-06-25 22:29",
+      "netValue": 2.1459,
+      "estimatedValue": 2.1506,
+      "estimatedChange": 0.22,
+      "rate": 0.22
     },
     {
       "id": "159660",
@@ -1002,13 +1021,13 @@
       "name": "纳指ETF汇添富",
       "limitStatus": "unlimited",
       "limitNote": "无限制",
-      "oneYearReturn": 27.37,
+      "oneYearReturn": 25.05,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-25 04:00",
-      "netValue": 2.1808,
-      "estimatedValue": 2.1718,
-      "estimatedChange": -0.41,
-      "rate": -0.41
+      "lastUpdated": "2026-06-25 22:29",
+      "netValue": 2.172,
+      "estimatedValue": 2.1768,
+      "estimatedChange": 0.22,
+      "rate": 0.22
     },
     {
       "id": "159696",
@@ -1016,13 +1035,13 @@
       "name": "纳指ETF易方达",
       "limitStatus": "unlimited",
       "limitNote": "无限制",
-      "oneYearReturn": 27.56,
+      "oneYearReturn": 25.23,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-25 04:00",
-      "netValue": 1.8574,
-      "estimatedValue": 1.8498,
-      "estimatedChange": -0.41,
-      "rate": -0.41
+      "lastUpdated": "2026-06-25 22:29",
+      "netValue": 1.8499,
+      "estimatedValue": 1.854,
+      "estimatedChange": 0.22,
+      "rate": 0.22
     },
     {
       "id": "159941",
@@ -1030,13 +1049,13 @@
       "name": "纳指ETF广发",
       "limitStatus": "unlimited",
       "limitNote": "无限制",
-      "oneYearReturn": 26.68,
+      "oneYearReturn": 24.46,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-25 04:00",
-      "netValue": 1.4966,
-      "estimatedValue": 1.4904,
-      "estimatedChange": -0.41,
-      "rate": -0.41
+      "lastUpdated": "2026-06-25 22:29",
+      "netValue": 1.4905,
+      "estimatedValue": 1.4938,
+      "estimatedChange": 0.22,
+      "rate": 0.22
     },
     {
       "id": "160213",
@@ -1044,13 +1063,13 @@
       "name": "国泰纳斯达克100指数",
       "limitStatus": "suspended",
       "limitNote": "暂停申购",
-      "oneYearReturn": 26.92,
+      "oneYearReturn": 24.6,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-25 04:00",
-      "netValue": 4.472,
-      "estimatedValue": 4.4536,
-      "estimatedChange": -0.41,
-      "rate": -0.41
+      "lastUpdated": "2026-06-25 22:29",
+      "netValue": 4.455,
+      "estimatedValue": 4.4648,
+      "estimatedChange": 0.22,
+      "rate": 0.22
     },
     {
       "id": "161130",
@@ -1058,13 +1077,13 @@
       "name": "易方达纳斯达克100ETF联接(QDII-LOF)A(人民币)",
       "limitStatus": "suspended",
       "limitNote": "暂停申购",
-      "oneYearReturn": 25.17,
+      "oneYearReturn": 23.01,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-25 04:00",
-      "netValue": 4.4423,
-      "estimatedValue": 4.424,
-      "estimatedChange": -0.41,
-      "rate": -0.41
+      "lastUpdated": "2026-06-25 22:29",
+      "netValue": 4.4259,
+      "estimatedValue": 4.4357,
+      "estimatedChange": 0.22,
+      "rate": 0.22
     },
     {
       "id": "270042",
@@ -1073,12 +1092,13 @@
       "limitStatus": "limited",
       "limitAmount": 10,
       "limitNote": "单日限额 10 元",
-      "oneYearReturn": 25.89,
+      "oneYearReturn": 23.75,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-25T10:13:41.100Z",
-      "netValue": 8.2111,
-      "estimatedChange": null,
-      "rate": null
+      "lastUpdated": "2026-06-25 22:29",
+      "netValue": 8.1772,
+      "estimatedValue": 8.1952,
+      "estimatedChange": 0.22,
+      "rate": 0.22
     },
     {
       "id": "513100",
@@ -1086,12 +1106,13 @@
       "name": "纳指ETF国泰",
       "limitStatus": "suspended",
       "limitNote": "暂停申购",
-      "oneYearReturn": 27.15,
+      "oneYearReturn": 24.8,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-25T10:13:41.100Z",
-      "netValue": 1.9962,
-      "estimatedChange": null,
-      "rate": null
+      "lastUpdated": "2026-06-25 22:29",
+      "netValue": 1.9881,
+      "estimatedValue": 1.9925,
+      "estimatedChange": 0.22,
+      "rate": 0.22
     },
     {
       "id": "513110",
@@ -1099,12 +1120,13 @@
       "name": "纳指ETF华泰柏瑞",
       "limitStatus": "unlimited",
       "limitNote": "无限制",
-      "oneYearReturn": 26.68,
+      "oneYearReturn": 24.38,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-25T10:13:41.100Z",
-      "netValue": 2.2923,
-      "estimatedChange": null,
-      "rate": null
+      "lastUpdated": "2026-06-25 22:29",
+      "netValue": 2.2831,
+      "estimatedValue": 2.2881,
+      "estimatedChange": 0.22,
+      "rate": 0.22
     },
     {
       "id": "513290",
@@ -1112,12 +1134,13 @@
       "name": "纳指生物科技ETF汇添富",
       "limitStatus": "unlimited",
       "limitNote": "无限制",
-      "oneYearReturn": 39.41,
+      "oneYearReturn": 38.8,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-25T10:13:41.100Z",
-      "netValue": 1.5256,
-      "estimatedChange": null,
-      "rate": null
+      "lastUpdated": "2026-06-25 22:29",
+      "netValue": 1.5473,
+      "estimatedValue": 1.5693,
+      "estimatedChange": 1.42,
+      "rate": 1.42
     },
     {
       "id": "513300",
@@ -1125,12 +1148,13 @@
       "name": "纳斯达克ETF华夏",
       "limitStatus": "unlimited",
       "limitNote": "无限制",
-      "oneYearReturn": 26.41,
+      "oneYearReturn": 24.42,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-25T10:13:41.100Z",
-      "netValue": 2.4815,
-      "estimatedChange": null,
-      "rate": null
+      "lastUpdated": "2026-06-25 22:29",
+      "netValue": 2.477,
+      "estimatedValue": 2.4825,
+      "estimatedChange": 0.22,
+      "rate": 0.22
     },
     {
       "id": "513390",
@@ -1138,13 +1162,13 @@
       "name": "纳指100ETF博时",
       "limitStatus": "suspended",
       "limitNote": "暂停申购",
-      "oneYearReturn": 27.26,
+      "oneYearReturn": 24.94,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-25 04:00",
-      "netValue": 2.2387,
-      "estimatedValue": 2.2295,
-      "estimatedChange": -0.41,
-      "rate": -0.41
+      "lastUpdated": "2026-06-25 22:29",
+      "netValue": 2.2297,
+      "estimatedValue": 2.2346,
+      "estimatedChange": 0.22,
+      "rate": 0.22
     },
     {
       "id": "513870",
@@ -1152,13 +1176,13 @@
       "name": "纳指ETF富国",
       "limitStatus": "unlimited",
       "limitNote": "无限制",
-      "oneYearReturn": 27.48,
+      "oneYearReturn": 25.16,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-25 04:00",
-      "netValue": 1.9008,
-      "estimatedValue": 1.893,
-      "estimatedChange": -0.41,
-      "rate": -0.41
+      "lastUpdated": "2026-06-25 22:29",
+      "netValue": 1.8931,
+      "estimatedValue": 1.8973,
+      "estimatedChange": 0.22,
+      "rate": 0.22
     },
     {
       "id": "539001",
@@ -1167,16 +1191,16 @@
       "limitStatus": "limited",
       "limitAmount": 100,
       "limitNote": "单日限额 100 元",
-      "oneYearReturn": 24.71,
+      "oneYearReturn": 22.62,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-25 04:00",
-      "netValue": 3.4501,
-      "estimatedValue": 3.4359,
-      "estimatedChange": -0.41,
-      "rate": -0.41
+      "lastUpdated": "2026-06-25 22:29",
+      "netValue": 3.4367,
+      "estimatedValue": 3.4443,
+      "estimatedChange": 0.22,
+      "rate": 0.22
     }
   ],
-  "lastUpdated": "2026-06-25T10:13:41.100Z",
+  "lastUpdated": "2026-06-25T15:38:07.280Z",
   "discoveredCount": 84,
   "source": "crawl"
 }
