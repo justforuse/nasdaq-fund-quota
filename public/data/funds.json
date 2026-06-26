@@ -421,7 +421,7 @@
       "limitStatus": "limited",
       "limitAmount": 1000,
       "limitNote": "单日限额 1,000 元",
-      "oneYearReturn": 18.15,
+      "oneYearReturn": 16.27,
       "fundType": "QDII-普通股票",
       "lastUpdated": "2026-06-26 04:00",
       "netValue": 2.2665,
@@ -438,7 +438,7 @@
       "limitNote": "单日限额 5,000 元",
       "oneYearReturn": 35.71,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-26T02:52:39.573Z",
+      "lastUpdated": "2026-06-26T06:52:28.297Z",
       "netValue": 1.4518,
       "estimatedChange": null,
       "rate": null
@@ -452,7 +452,7 @@
       "limitNote": "单日限额 5,000 元",
       "oneYearReturn": 35.36,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-26T02:52:39.573Z",
+      "lastUpdated": "2026-06-26T06:52:28.298Z",
       "netValue": 1.4408,
       "estimatedChange": null,
       "rate": null
@@ -465,7 +465,7 @@
       "limitNote": "暂停申购",
       "oneYearReturn": 42.55,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-26T02:52:39.573Z",
+      "lastUpdated": "2026-06-26T06:52:28.298Z",
       "netValue": 1.4698,
       "estimatedChange": null,
       "rate": null
@@ -478,7 +478,7 @@
       "limitNote": "暂停申购",
       "oneYearReturn": 42.55,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-26T02:52:39.573Z",
+      "lastUpdated": "2026-06-26T06:52:28.298Z",
       "netValue": 1.4698,
       "estimatedChange": null,
       "rate": null
@@ -769,7 +769,7 @@
       "limitNote": "无限制",
       "oneYearReturn": 0,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-26T02:52:39.573Z",
+      "lastUpdated": "2026-06-26T06:52:28.298Z",
       "netValue": null,
       "estimatedChange": null,
       "rate": null
@@ -782,7 +782,7 @@
       "limitNote": "无限制",
       "oneYearReturn": 0,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-26T02:52:39.573Z",
+      "lastUpdated": "2026-06-26T06:52:28.298Z",
       "netValue": null,
       "estimatedChange": null,
       "rate": null
@@ -1200,7 +1200,7 @@
       "rate": 0.72
     }
   ],
-  "lastUpdated": "2026-06-26T02:52:39.573Z",
+  "lastUpdated": "2026-06-26T06:52:28.298Z",
   "discoveredCount": 84,
   "source": "crawl"
 }
