@@ -367,9 +367,9 @@
       "fundType": "指数型-海外股票",
       "lastUpdated": "2026-06-27 04:00",
       "netValue": 2.7893,
-      "estimatedValue": 2.7874,
-      "estimatedChange": -0.07,
-      "rate": -0.07
+      "estimatedValue": 2.7871,
+      "estimatedChange": -0.08,
+      "rate": -0.08
     },
     {
       "id": "017092",
@@ -382,8 +382,8 @@
       "lastUpdated": "2026-06-27 04:00",
       "netValue": 0.4089,
       "estimatedValue": 0.4086,
-      "estimatedChange": -0.07,
-      "rate": -0.07
+      "estimatedChange": -0.08,
+      "rate": -0.08
     },
     {
       "id": "017093",
@@ -395,9 +395,9 @@
       "fundType": "指数型-海外股票",
       "lastUpdated": "2026-06-27 04:00",
       "netValue": 2.7474,
-      "estimatedValue": 2.7456,
-      "estimatedChange": -0.07,
-      "rate": -0.07
+      "estimatedValue": 2.7452,
+      "estimatedChange": -0.08,
+      "rate": -0.08
     },
     {
       "id": "017436",
@@ -410,9 +410,9 @@
       "fundType": "QDII-普通股票",
       "lastUpdated": "2026-06-27 04:00",
       "netValue": 2.2652,
-      "estimatedValue": 2.2637,
-      "estimatedChange": -0.07,
-      "rate": -0.07
+      "estimatedValue": 2.2634,
+      "estimatedChange": -0.08,
+      "rate": -0.08
     },
     {
       "id": "017437",
@@ -425,9 +425,9 @@
       "fundType": "QDII-普通股票",
       "lastUpdated": "2026-06-27 04:00",
       "netValue": 2.2372,
-      "estimatedValue": 2.2357,
-      "estimatedChange": -0.07,
-      "rate": -0.07
+      "estimatedValue": 2.2354,
+      "estimatedChange": -0.08,
+      "rate": -0.08
     },
     {
       "id": "017894",
@@ -438,7 +438,7 @@
       "limitNote": "单日限额 5,000 元",
       "oneYearReturn": 37.8,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-27T13:23:18.792Z",
+      "lastUpdated": "2026-06-27T14:59:32.064Z",
       "netValue": 1.4645,
       "estimatedChange": null,
       "rate": null
@@ -452,7 +452,7 @@
       "limitNote": "单日限额 5,000 元",
       "oneYearReturn": 37.45,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-27T13:23:18.792Z",
+      "lastUpdated": "2026-06-27T14:59:32.064Z",
       "netValue": 1.4534,
       "estimatedChange": null,
       "rate": null
@@ -465,7 +465,7 @@
       "limitNote": "暂停申购",
       "oneYearReturn": 44.74,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-27T13:23:18.792Z",
+      "lastUpdated": "2026-06-27T14:59:32.064Z",
       "netValue": 1.4824,
       "estimatedChange": null,
       "rate": null
@@ -478,7 +478,7 @@
       "limitNote": "暂停申购",
       "oneYearReturn": 44.74,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-27T13:23:18.792Z",
+      "lastUpdated": "2026-06-27T14:59:32.064Z",
       "netValue": 1.4824,
       "estimatedChange": null,
       "rate": null
@@ -579,9 +579,9 @@
       "fundType": "指数型-海外股票",
       "lastUpdated": "2026-06-27 04:00",
       "netValue": 2.7709,
-      "estimatedValue": 2.769,
-      "estimatedChange": -0.07,
-      "rate": -0.07
+      "estimatedValue": 2.7687,
+      "estimatedChange": -0.08,
+      "rate": -0.08
     },
     {
       "id": "019172",
@@ -769,7 +769,7 @@
       "limitNote": "无限制",
       "oneYearReturn": 0,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-27T13:23:18.793Z",
+      "lastUpdated": "2026-06-27T14:59:32.065Z",
       "netValue": null,
       "estimatedChange": null,
       "rate": null
@@ -782,7 +782,7 @@
       "limitNote": "无限制",
       "oneYearReturn": 0,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-27T13:23:18.793Z",
+      "lastUpdated": "2026-06-27T14:59:32.065Z",
       "netValue": null,
       "estimatedChange": null,
       "rate": null
@@ -969,9 +969,9 @@
       "fundType": "指数型-海外股票",
       "lastUpdated": "2026-06-27 04:00",
       "netValue": 2.2128,
-      "estimatedValue": 2.2113,
-      "estimatedChange": -0.07,
-      "rate": -0.07
+      "estimatedValue": 2.211,
+      "estimatedChange": -0.08,
+      "rate": -0.08
     },
     {
       "id": "159513",
@@ -1138,9 +1138,9 @@
       "fundType": "指数型-海外股票",
       "lastUpdated": "2026-06-27 04:00",
       "netValue": 1.5616,
-      "estimatedValue": 1.5605,
-      "estimatedChange": -0.07,
-      "rate": -0.07
+      "estimatedValue": 1.5603,
+      "estimatedChange": -0.09,
+      "rate": -0.09
     },
     {
       "id": "513300",
@@ -1200,7 +1200,7 @@
       "rate": -1.04
     }
   ],
-  "lastUpdated": "2026-06-27T13:23:18.793Z",
+  "lastUpdated": "2026-06-27T14:59:32.065Z",
   "discoveredCount": 84,
   "source": "crawl"
 }
