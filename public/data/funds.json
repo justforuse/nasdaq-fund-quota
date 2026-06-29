@@ -8,11 +8,10 @@
       "limitNote": "无限制",
       "oneYearReturn": 28.08,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-29 22:29",
+      "lastUpdated": "2026-06-29T21:07:03.609Z",
       "netValue": 1.1945,
-      "estimatedValue": 1.1979,
-      "estimatedChange": 0.29,
-      "rate": 0.29
+      "estimatedChange": null,
+      "rate": null
     },
     {
       "id": "000834",
@@ -23,11 +22,10 @@
       "limitNote": "单日限额 10 元",
       "oneYearReturn": 21.5,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-29 22:29",
+      "lastUpdated": "2026-06-29T21:07:03.622Z",
       "netValue": 6.2714,
-      "estimatedValue": 6.2893,
-      "estimatedChange": 0.29,
-      "rate": 0.29
+      "estimatedChange": null,
+      "rate": null
     },
     {
       "id": "003722",
@@ -37,11 +35,10 @@
       "limitNote": "暂停申购",
       "oneYearReturn": 27.42,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-29 22:29",
+      "lastUpdated": "2026-06-29T21:07:03.622Z",
       "netValue": 0.6468,
-      "estimatedValue": 0.6486,
-      "estimatedChange": 0.29,
-      "rate": 0.29
+      "estimatedChange": null,
+      "rate": null
     },
     {
       "id": "006479",
@@ -52,11 +49,10 @@
       "limitNote": "单日限额 10 元",
       "oneYearReturn": 21.67,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-29 22:29",
+      "lastUpdated": "2026-06-29T21:07:03.622Z",
       "netValue": 8.0025,
-      "estimatedValue": 8.0254,
-      "estimatedChange": 0.29,
-      "rate": 0.29
+      "estimatedChange": null,
+      "rate": null
     },
     {
       "id": "006480",
@@ -66,11 +62,10 @@
       "limitNote": "无限制",
       "oneYearReturn": 27.84,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-29 22:29",
+      "lastUpdated": "2026-06-29T21:07:03.622Z",
       "netValue": 1.174,
-      "estimatedValue": 1.1774,
-      "estimatedChange": 0.29,
-      "rate": 0.29
+      "estimatedChange": null,
+      "rate": null
     },
     {
       "id": "008971",
@@ -81,11 +76,10 @@
       "limitNote": "单日限额 10 元",
       "oneYearReturn": 21.13,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-29 22:29",
+      "lastUpdated": "2026-06-29T21:07:03.622Z",
       "netValue": 6.2159,
-      "estimatedValue": 6.2337,
-      "estimatedChange": 0.29,
-      "rate": 0.29
+      "estimatedChange": null,
+      "rate": null
     },
     {
       "id": "012751",
@@ -95,11 +89,10 @@
       "limitNote": "无限制",
       "oneYearReturn": 26.98,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-29 22:29",
+      "lastUpdated": "2026-06-29T21:07:03.622Z",
       "netValue": 0.5022,
-      "estimatedValue": 0.5036,
-      "estimatedChange": 0.29,
-      "rate": 0.29
+      "estimatedChange": null,
+      "rate": null
     },
     {
       "id": "012752",
@@ -110,11 +103,10 @@
       "limitNote": "单日限额 100 元",
       "oneYearReturn": 20.49,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-29 22:29",
+      "lastUpdated": "2026-06-29T21:07:03.622Z",
       "netValue": 3.3145,
-      "estimatedValue": 3.324,
-      "estimatedChange": 0.29,
-      "rate": 0.29
+      "estimatedChange": null,
+      "rate": null
     },
     {
       "id": "012753",
@@ -124,11 +116,10 @@
       "limitNote": "无限制",
       "oneYearReturn": 26.58,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-29 22:29",
+      "lastUpdated": "2026-06-29T21:07:03.622Z",
       "netValue": 0.4862,
-      "estimatedValue": 0.4876,
-      "estimatedChange": 0.29,
-      "rate": 0.29
+      "estimatedChange": null,
+      "rate": null
     },
     {
       "id": "012870",
@@ -138,11 +129,10 @@
       "limitNote": "暂停申购",
       "oneYearReturn": 20.91,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-29 22:29",
+      "lastUpdated": "2026-06-29T21:07:03.622Z",
       "netValue": 4.3342,
-      "estimatedValue": 4.3466,
-      "estimatedChange": 0.29,
-      "rate": 0.29
+      "estimatedChange": null,
+      "rate": null
     },
     {
       "id": "012871",
@@ -152,11 +142,10 @@
       "limitNote": "暂停申购",
       "oneYearReturn": 27.03,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-29 22:29",
+      "lastUpdated": "2026-06-29T21:07:03.622Z",
       "netValue": 0.6358,
-      "estimatedValue": 0.6376,
-      "estimatedChange": 0.29,
-      "rate": 0.29
+      "estimatedChange": null,
+      "rate": null
     },
     {
       "id": "014978",
@@ -167,11 +156,10 @@
       "limitNote": "单日限额 10 元",
       "oneYearReturn": 22.2,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-29 22:29",
+      "lastUpdated": "2026-06-29T21:07:03.622Z",
       "netValue": 8.0164,
-      "estimatedValue": 8.0393,
-      "estimatedChange": 0.29,
-      "rate": 0.29
+      "estimatedChange": null,
+      "rate": null
     },
     {
       "id": "015299",
@@ -181,11 +169,10 @@
       "limitNote": "暂停申购",
       "oneYearReturn": 22.5,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-29 22:29",
+      "lastUpdated": "2026-06-29T21:07:03.622Z",
       "netValue": 2.0285,
-      "estimatedValue": 2.0343,
-      "estimatedChange": 0.29,
-      "rate": 0.29
+      "estimatedChange": null,
+      "rate": null
     },
     {
       "id": "015300",
@@ -195,11 +182,10 @@
       "limitNote": "暂停申购",
       "oneYearReturn": 22.13,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-29 22:29",
+      "lastUpdated": "2026-06-29T21:07:03.622Z",
       "netValue": 2.0031,
-      "estimatedValue": 2.0088,
-      "estimatedChange": 0.29,
-      "rate": 0.29
+      "estimatedChange": null,
+      "rate": null
     },
     {
       "id": "015518",
@@ -209,11 +195,10 @@
       "limitNote": "暂停申购",
       "oneYearReturn": 29.09,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-29 22:29",
+      "lastUpdated": "2026-06-29T21:07:03.622Z",
       "netValue": 0.2982,
-      "estimatedValue": 0.2991,
-      "estimatedChange": 0.29,
-      "rate": 0.29
+      "estimatedChange": null,
+      "rate": null
     },
     {
       "id": "016055",
@@ -223,11 +208,10 @@
       "limitNote": "暂停申购",
       "oneYearReturn": 22.3,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-29 22:29",
+      "lastUpdated": "2026-06-29T21:07:03.622Z",
       "netValue": 2.101,
-      "estimatedValue": 2.107,
-      "estimatedChange": 0.29,
-      "rate": 0.29
+      "estimatedChange": null,
+      "rate": null
     },
     {
       "id": "016056",
@@ -237,11 +221,10 @@
       "limitNote": "暂停申购",
       "oneYearReturn": 28.47,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-29 22:29",
+      "lastUpdated": "2026-06-29T21:07:03.622Z",
       "netValue": 0.3082,
-      "estimatedValue": 0.3091,
-      "estimatedChange": 0.29,
-      "rate": 0.29
+      "estimatedChange": null,
+      "rate": null
     },
     {
       "id": "016057",
@@ -251,11 +234,10 @@
       "limitNote": "暂停申购",
       "oneYearReturn": 21.93,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-29 22:29",
+      "lastUpdated": "2026-06-29T21:07:03.622Z",
       "netValue": 2.0747,
-      "estimatedValue": 2.0806,
-      "estimatedChange": 0.29,
-      "rate": 0.29
+      "estimatedChange": null,
+      "rate": null
     },
     {
       "id": "016058",
@@ -265,11 +247,10 @@
       "limitNote": "暂停申购",
       "oneYearReturn": 28.11,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-29 22:29",
+      "lastUpdated": "2026-06-29T21:07:03.622Z",
       "netValue": 0.3044,
-      "estimatedValue": 0.3053,
-      "estimatedChange": 0.29,
-      "rate": 0.29
+      "estimatedChange": null,
+      "rate": null
     },
     {
       "id": "016452",
@@ -280,11 +261,10 @@
       "limitNote": "单日限额 50 元",
       "oneYearReturn": 21.21,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-29 22:29",
+      "lastUpdated": "2026-06-29T21:07:03.622Z",
       "netValue": 2.2731,
-      "estimatedValue": 2.2796,
-      "estimatedChange": 0.29,
-      "rate": 0.29
+      "estimatedChange": null,
+      "rate": null
     },
     {
       "id": "016453",
@@ -295,11 +275,10 @@
       "limitNote": "单日限额 50 元",
       "oneYearReturn": 21.09,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-29 22:29",
+      "lastUpdated": "2026-06-29T21:07:03.622Z",
       "netValue": 2.2634,
-      "estimatedValue": 2.2699,
-      "estimatedChange": 0.29,
-      "rate": 0.29
+      "estimatedChange": null,
+      "rate": null
     },
     {
       "id": "016532",
@@ -309,11 +288,10 @@
       "limitNote": "暂停申购",
       "oneYearReturn": 21.37,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-29 22:29",
+      "lastUpdated": "2026-06-29T21:07:03.622Z",
       "netValue": 2.153,
-      "estimatedValue": 2.1592,
-      "estimatedChange": 0.29,
-      "rate": 0.29
+      "estimatedChange": null,
+      "rate": null
     },
     {
       "id": "016533",
@@ -323,11 +301,10 @@
       "limitNote": "暂停申购",
       "oneYearReturn": 21.08,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-29 22:29",
+      "lastUpdated": "2026-06-29T21:07:03.622Z",
       "netValue": 2.1296,
-      "estimatedValue": 2.1357,
-      "estimatedChange": 0.29,
-      "rate": 0.29
+      "estimatedChange": null,
+      "rate": null
     },
     {
       "id": "016534",
@@ -337,11 +314,10 @@
       "limitNote": "暂停申购",
       "oneYearReturn": 27.49,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-29 22:29",
+      "lastUpdated": "2026-06-29T21:07:03.622Z",
       "netValue": 0.3158,
-      "estimatedValue": 0.3167,
-      "estimatedChange": 0.29,
-      "rate": 0.29
+      "estimatedChange": null,
+      "rate": null
     },
     {
       "id": "016535",
@@ -351,11 +327,10 @@
       "limitNote": "暂停申购",
       "oneYearReturn": 27.2,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-29 22:29",
+      "lastUpdated": "2026-06-29T21:07:03.622Z",
       "netValue": 0.3124,
-      "estimatedValue": 0.3133,
-      "estimatedChange": 0.29,
-      "rate": 0.29
+      "estimatedChange": null,
+      "rate": null
     },
     {
       "id": "017091",
@@ -365,11 +340,10 @@
       "limitNote": "暂停申购",
       "oneYearReturn": 32.33,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-29 22:29",
+      "lastUpdated": "2026-06-29T21:07:03.622Z",
       "netValue": 2.7568,
-      "estimatedValue": 2.772,
-      "estimatedChange": 0.55,
-      "rate": 0.55
+      "estimatedChange": null,
+      "rate": null
     },
     {
       "id": "017092",
@@ -379,11 +353,10 @@
       "limitNote": "暂停申购",
       "oneYearReturn": 39.06,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-29 22:29",
+      "lastUpdated": "2026-06-29T21:07:03.622Z",
       "netValue": 0.4044,
-      "estimatedValue": 0.4066,
-      "estimatedChange": 0.55,
-      "rate": 0.55
+      "estimatedChange": null,
+      "rate": null
     },
     {
       "id": "017093",
@@ -393,11 +366,10 @@
       "limitNote": "暂停申购",
       "oneYearReturn": 31.8,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-29 22:29",
+      "lastUpdated": "2026-06-29T21:07:03.622Z",
       "netValue": 2.7153,
-      "estimatedValue": 2.7303,
-      "estimatedChange": 0.55,
-      "rate": 0.55
+      "estimatedChange": null,
+      "rate": null
     },
     {
       "id": "017436",
@@ -408,11 +380,10 @@
       "limitNote": "单日限额 1,000 元",
       "oneYearReturn": 14.25,
       "fundType": "QDII-普通股票",
-      "lastUpdated": "2026-06-29 22:29",
+      "lastUpdated": "2026-06-29T21:07:03.622Z",
       "netValue": 2.2477,
-      "estimatedValue": 2.26,
-      "estimatedChange": 0.55,
-      "rate": 0.55
+      "estimatedChange": null,
+      "rate": null
     },
     {
       "id": "017437",
@@ -423,11 +394,10 @@
       "limitNote": "单日限额 1,000 元",
       "oneYearReturn": 13.8,
       "fundType": "QDII-普通股票",
-      "lastUpdated": "2026-06-29 22:29",
+      "lastUpdated": "2026-06-29T21:07:03.622Z",
       "netValue": 2.2199,
-      "estimatedValue": 2.2321,
-      "estimatedChange": 0.55,
-      "rate": 0.55
+      "estimatedChange": null,
+      "rate": null
     },
     {
       "id": "017894",
@@ -438,7 +408,7 @@
       "limitNote": "单日限额 5,000 元",
       "oneYearReturn": 40.55,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-29T19:02:39.510Z",
+      "lastUpdated": "2026-06-29T21:07:03.622Z",
       "netValue": 1.4952,
       "estimatedChange": null,
       "rate": null
@@ -452,7 +422,7 @@
       "limitNote": "单日限额 5,000 元",
       "oneYearReturn": 40.21,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-29T19:02:39.510Z",
+      "lastUpdated": "2026-06-29T21:07:03.622Z",
       "netValue": 1.4838,
       "estimatedChange": null,
       "rate": null
@@ -465,7 +435,7 @@
       "limitNote": "暂停申购",
       "oneYearReturn": 47.63,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-29T19:02:39.510Z",
+      "lastUpdated": "2026-06-29T21:07:03.622Z",
       "netValue": 1.5144,
       "estimatedChange": null,
       "rate": null
@@ -478,7 +448,7 @@
       "limitNote": "暂停申购",
       "oneYearReturn": 47.63,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-29T19:02:39.510Z",
+      "lastUpdated": "2026-06-29T21:07:03.622Z",
       "netValue": 1.5144,
       "estimatedChange": null,
       "rate": null
@@ -491,11 +461,10 @@
       "limitNote": "暂停申购",
       "oneYearReturn": 21.82,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-29 22:29",
+      "lastUpdated": "2026-06-29T21:07:03.622Z",
       "netValue": 2.022,
-      "estimatedValue": 2.0278,
-      "estimatedChange": 0.29,
-      "rate": 0.29
+      "estimatedChange": null,
+      "rate": null
     },
     {
       "id": "018044",
@@ -505,11 +474,10 @@
       "limitNote": "暂停申购",
       "oneYearReturn": 21.59,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-29 22:29",
+      "lastUpdated": "2026-06-29T21:07:03.622Z",
       "netValue": 2.0057,
-      "estimatedValue": 2.0114,
-      "estimatedChange": 0.29,
-      "rate": 0.29
+      "estimatedChange": null,
+      "rate": null
     },
     {
       "id": "018966",
@@ -520,11 +488,10 @@
       "limitNote": "单日限额 100 元",
       "oneYearReturn": 19.96,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-29 22:29",
+      "lastUpdated": "2026-06-29T21:07:03.622Z",
       "netValue": 1.6359,
-      "estimatedValue": 1.6406,
-      "estimatedChange": 0.29,
-      "rate": 0.29
+      "estimatedChange": null,
+      "rate": null
     },
     {
       "id": "018967",
@@ -535,11 +502,10 @@
       "limitNote": "单日限额 100 元",
       "oneYearReturn": 19.47,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-29 22:29",
+      "lastUpdated": "2026-06-29T21:07:03.622Z",
       "netValue": 1.6173,
-      "estimatedValue": 1.6219,
-      "estimatedChange": 0.29,
-      "rate": 0.29
+      "estimatedChange": null,
+      "rate": null
     },
     {
       "id": "018968",
@@ -549,11 +515,10 @@
       "limitNote": "暂停申购",
       "oneYearReturn": 26.03,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-29 22:29",
+      "lastUpdated": "2026-06-29T21:07:03.622Z",
       "netValue": 1.7234,
-      "estimatedValue": 1.7283,
-      "estimatedChange": 0.29,
-      "rate": 0.29
+      "estimatedChange": null,
+      "rate": null
     },
     {
       "id": "018969",
@@ -563,11 +528,10 @@
       "limitNote": "暂停申购",
       "oneYearReturn": 26.03,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-29 22:29",
+      "lastUpdated": "2026-06-29T21:07:03.622Z",
       "netValue": 1.7234,
-      "estimatedValue": 1.7283,
-      "estimatedChange": 0.29,
-      "rate": 0.29
+      "estimatedChange": null,
+      "rate": null
     },
     {
       "id": "019118",
@@ -577,11 +541,10 @@
       "limitNote": "暂停申购",
       "oneYearReturn": 32.07,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-29 22:29",
+      "lastUpdated": "2026-06-29T21:07:03.622Z",
       "netValue": 2.7387,
-      "estimatedValue": 2.7538,
-      "estimatedChange": 0.55,
-      "rate": 0.55
+      "estimatedChange": null,
+      "rate": null
     },
     {
       "id": "019172",
@@ -592,11 +555,10 @@
       "limitNote": "单日限额 10 元",
       "oneYearReturn": 21.82,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-29 22:29",
+      "lastUpdated": "2026-06-29T21:07:03.622Z",
       "netValue": 1.7378,
-      "estimatedValue": 1.7428,
-      "estimatedChange": 0.29,
-      "rate": 0.29
+      "estimatedChange": null,
+      "rate": null
     },
     {
       "id": "019173",
@@ -607,11 +569,10 @@
       "limitNote": "单日限额 10 元",
       "oneYearReturn": 21.47,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-29 22:29",
+      "lastUpdated": "2026-06-29T21:07:03.622Z",
       "netValue": 1.7228,
-      "estimatedValue": 1.7277,
-      "estimatedChange": 0.29,
-      "rate": 0.29
+      "estimatedChange": null,
+      "rate": null
     },
     {
       "id": "019174",
@@ -621,11 +582,10 @@
       "limitNote": "无限制",
       "oneYearReturn": 28,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-29 22:29",
+      "lastUpdated": "2026-06-29T21:07:03.622Z",
       "netValue": 1.8219,
-      "estimatedValue": 1.8271,
-      "estimatedChange": 0.29,
-      "rate": 0.29
+      "estimatedChange": null,
+      "rate": null
     },
     {
       "id": "019175",
@@ -635,11 +595,10 @@
       "limitNote": "无限制",
       "oneYearReturn": 27.62,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-29 22:29",
+      "lastUpdated": "2026-06-29T21:07:03.622Z",
       "netValue": 1.8147,
-      "estimatedValue": 1.8199,
-      "estimatedChange": 0.29,
-      "rate": 0.29
+      "estimatedChange": null,
+      "rate": null
     },
     {
       "id": "019441",
@@ -650,11 +609,10 @@
       "limitNote": "单日限额 50 元",
       "oneYearReturn": 21.26,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-29 22:29",
+      "lastUpdated": "2026-06-29T21:07:03.622Z",
       "netValue": 1.6708,
-      "estimatedValue": 1.6756,
-      "estimatedChange": 0.29,
-      "rate": 0.29
+      "estimatedChange": null,
+      "rate": null
     },
     {
       "id": "019442",
@@ -665,11 +623,10 @@
       "limitNote": "单日限额 50 元",
       "oneYearReturn": 21.01,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-29 22:29",
+      "lastUpdated": "2026-06-29T21:07:03.622Z",
       "netValue": 1.6605,
-      "estimatedValue": 1.6652,
-      "estimatedChange": 0.29,
-      "rate": 0.29
+      "estimatedChange": null,
+      "rate": null
     },
     {
       "id": "019524",
@@ -680,11 +637,10 @@
       "limitNote": "单日限额 10 元",
       "oneYearReturn": 20.86,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-29 22:29",
+      "lastUpdated": "2026-06-29T21:07:03.622Z",
       "netValue": 1.6377,
-      "estimatedValue": 1.6424,
-      "estimatedChange": 0.29,
-      "rate": 0.29
+      "estimatedChange": null,
+      "rate": null
     },
     {
       "id": "019525",
@@ -695,11 +651,10 @@
       "limitNote": "单日限额 10 元",
       "oneYearReturn": 20.56,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-29 22:29",
+      "lastUpdated": "2026-06-29T21:07:03.622Z",
       "netValue": 1.6246,
-      "estimatedValue": 1.6292,
-      "estimatedChange": 0.29,
-      "rate": 0.29
+      "estimatedChange": null,
+      "rate": null
     },
     {
       "id": "019547",
@@ -710,11 +665,10 @@
       "limitNote": "单日限额 10 元",
       "oneYearReturn": 21.5,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-29 22:29",
+      "lastUpdated": "2026-06-29T21:07:03.622Z",
       "netValue": 1.5621,
-      "estimatedValue": 1.5666,
-      "estimatedChange": 0.29,
-      "rate": 0.29
+      "estimatedChange": null,
+      "rate": null
     },
     {
       "id": "019548",
@@ -725,11 +679,10 @@
       "limitNote": "单日限额 10 元",
       "oneYearReturn": 21.01,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-29 22:29",
+      "lastUpdated": "2026-06-29T21:07:03.622Z",
       "netValue": 1.5463,
-      "estimatedValue": 1.5507,
-      "estimatedChange": 0.29,
-      "rate": 0.29
+      "estimatedChange": null,
+      "rate": null
     },
     {
       "id": "019736",
@@ -740,11 +693,10 @@
       "limitNote": "单日限额 10 元",
       "oneYearReturn": 21.09,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-29 22:29",
+      "lastUpdated": "2026-06-29T21:07:03.622Z",
       "netValue": 1.4797,
-      "estimatedValue": 1.4839,
-      "estimatedChange": 0.29,
-      "rate": 0.29
+      "estimatedChange": null,
+      "rate": null
     },
     {
       "id": "019737",
@@ -755,11 +707,10 @@
       "limitNote": "单日限额 10 元",
       "oneYearReturn": 20.8,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-29 22:29",
+      "lastUpdated": "2026-06-29T21:07:03.622Z",
       "netValue": 1.4701,
-      "estimatedValue": 1.4743,
-      "estimatedChange": 0.29,
-      "rate": 0.29
+      "estimatedChange": null,
+      "rate": null
     },
     {
       "id": "019738",
@@ -769,7 +720,7 @@
       "limitNote": "无限制",
       "oneYearReturn": 0,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-29T19:02:39.511Z",
+      "lastUpdated": "2026-06-29T21:07:03.622Z",
       "netValue": null,
       "estimatedChange": null,
       "rate": null
@@ -782,7 +733,7 @@
       "limitNote": "无限制",
       "oneYearReturn": 0,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-29T19:02:39.511Z",
+      "lastUpdated": "2026-06-29T21:07:03.622Z",
       "netValue": null,
       "estimatedChange": null,
       "rate": null
@@ -795,11 +746,10 @@
       "limitNote": "无限制",
       "oneYearReturn": 21.15,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-29 22:29",
+      "lastUpdated": "2026-06-29T21:07:03.622Z",
       "netValue": 2.2733,
-      "estimatedValue": 2.2798,
-      "estimatedChange": 0.29,
-      "rate": 0.29
+      "estimatedChange": null,
+      "rate": null
     },
     {
       "id": "021773",
@@ -810,11 +760,10 @@
       "limitNote": "单日限额 100 元",
       "oneYearReturn": 19.83,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-29 22:29",
+      "lastUpdated": "2026-06-29T21:07:03.622Z",
       "netValue": 1.6327,
-      "estimatedValue": 1.6374,
-      "estimatedChange": 0.29,
-      "rate": 0.29
+      "estimatedChange": null,
+      "rate": null
     },
     {
       "id": "021778",
@@ -824,11 +773,10 @@
       "limitNote": "无限制",
       "oneYearReturn": 21.69,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-29 22:29",
+      "lastUpdated": "2026-06-29T21:07:03.622Z",
       "netValue": 8.1159,
-      "estimatedValue": 8.1391,
-      "estimatedChange": 0.29,
-      "rate": 0.29
+      "estimatedChange": null,
+      "rate": null
     },
     {
       "id": "021838",
@@ -838,11 +786,10 @@
       "limitNote": "暂停申购",
       "oneYearReturn": 21.06,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-29 22:29",
+      "lastUpdated": "2026-06-29T21:07:03.622Z",
       "netValue": 2.1343,
-      "estimatedValue": 2.1404,
-      "estimatedChange": 0.29,
-      "rate": 0.29
+      "estimatedChange": null,
+      "rate": null
     },
     {
       "id": "022525",
@@ -852,11 +799,10 @@
       "limitNote": "暂停申购",
       "oneYearReturn": 21.59,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-29 22:29",
+      "lastUpdated": "2026-06-29T21:07:03.622Z",
       "netValue": 2.0017,
-      "estimatedValue": 2.0074,
-      "estimatedChange": 0.29,
-      "rate": 0.29
+      "estimatedChange": null,
+      "rate": null
     },
     {
       "id": "022664",
@@ -867,11 +813,10 @@
       "limitNote": "单日限额 10 元",
       "oneYearReturn": 20.7,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-29 22:29",
+      "lastUpdated": "2026-06-29T21:07:03.622Z",
       "netValue": 1.6358,
-      "estimatedValue": 1.6405,
-      "estimatedChange": 0.29,
-      "rate": 0.29
+      "estimatedChange": null,
+      "rate": null
     },
     {
       "id": "023422",
@@ -882,11 +827,10 @@
       "limitNote": "单日限额 100 元",
       "oneYearReturn": 20.5,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-29 22:29",
+      "lastUpdated": "2026-06-29T21:07:03.622Z",
       "netValue": 3.3303,
-      "estimatedValue": 3.3398,
-      "estimatedChange": 0.29,
-      "rate": 0.29
+      "estimatedChange": null,
+      "rate": null
     },
     {
       "id": "024237",
@@ -896,11 +840,10 @@
       "limitNote": "暂停申购",
       "oneYearReturn": 22.08,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-29 22:29",
+      "lastUpdated": "2026-06-29T21:07:03.622Z",
       "netValue": 2.097,
-      "estimatedValue": 2.103,
-      "estimatedChange": 0.29,
-      "rate": 0.29
+      "estimatedChange": null,
+      "rate": null
     },
     {
       "id": "040046",
@@ -911,11 +854,10 @@
       "limitNote": "单日限额 10 元",
       "oneYearReturn": 22.44,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-29 22:29",
+      "lastUpdated": "2026-06-29T21:07:03.622Z",
       "netValue": 8.1822,
-      "estimatedValue": 8.2056,
-      "estimatedChange": 0.29,
-      "rate": 0.29
+      "estimatedChange": null,
+      "rate": null
     },
     {
       "id": "040047",
@@ -925,11 +867,10 @@
       "limitNote": "暂停申购",
       "oneYearReturn": 28.65,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-29 22:29",
+      "lastUpdated": "2026-06-29T21:07:03.622Z",
       "netValue": 1.2003,
-      "estimatedValue": 1.2037,
-      "estimatedChange": 0.29,
-      "rate": 0.29
+      "estimatedChange": null,
+      "rate": null
     },
     {
       "id": "040048",
@@ -939,11 +880,10 @@
       "limitNote": "暂停申购",
       "oneYearReturn": 28.65,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-29 22:29",
+      "lastUpdated": "2026-06-29T21:07:03.622Z",
       "netValue": 1.2003,
-      "estimatedValue": 1.2037,
-      "estimatedChange": 0.29,
-      "rate": 0.29
+      "estimatedChange": null,
+      "rate": null
     },
     {
       "id": "159501",
@@ -953,11 +893,10 @@
       "limitNote": "无限制",
       "oneYearReturn": 23.19,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-29 22:29",
+      "lastUpdated": "2026-06-29T21:07:03.622Z",
       "netValue": 1.8594,
-      "estimatedValue": 1.8647,
-      "estimatedChange": 0.29,
-      "rate": 0.29
+      "estimatedChange": null,
+      "rate": null
     },
     {
       "id": "159509",
@@ -967,11 +906,10 @@
       "limitNote": "无限制",
       "oneYearReturn": 36.84,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-29 22:29",
+      "lastUpdated": "2026-06-29T21:07:03.622Z",
       "netValue": 2.1843,
-      "estimatedValue": 2.1967,
-      "estimatedChange": 0.57,
-      "rate": 0.57
+      "estimatedChange": null,
+      "rate": null
     },
     {
       "id": "159513",
@@ -981,11 +919,10 @@
       "limitNote": "无限制",
       "oneYearReturn": 22.38,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-29 22:29",
+      "lastUpdated": "2026-06-29T21:07:03.622Z",
       "netValue": 1.6541,
-      "estimatedValue": 1.6588,
-      "estimatedChange": 0.29,
-      "rate": 0.29
+      "estimatedChange": null,
+      "rate": null
     },
     {
       "id": "159632",
@@ -995,11 +932,10 @@
       "limitNote": "无限制",
       "oneYearReturn": 23.01,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-29 22:29",
+      "lastUpdated": "2026-06-29T21:07:03.622Z",
       "netValue": 2.2477,
-      "estimatedValue": 2.2541,
-      "estimatedChange": 0.29,
-      "rate": 0.29
+      "estimatedChange": null,
+      "rate": null
     },
     {
       "id": "159659",
@@ -1009,11 +945,10 @@
       "limitNote": "无限制",
       "oneYearReturn": 23.45,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-29 22:29",
+      "lastUpdated": "2026-06-29T21:07:03.622Z",
       "netValue": 2.1375,
-      "estimatedValue": 2.1436,
-      "estimatedChange": 0.29,
-      "rate": 0.29
+      "estimatedChange": null,
+      "rate": null
     },
     {
       "id": "159660",
@@ -1023,11 +958,10 @@
       "limitNote": "无限制",
       "oneYearReturn": 23.2,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-29 22:29",
+      "lastUpdated": "2026-06-29T21:07:03.622Z",
       "netValue": 2.1633,
-      "estimatedValue": 2.1695,
-      "estimatedChange": 0.29,
-      "rate": 0.29
+      "estimatedChange": null,
+      "rate": null
     },
     {
       "id": "159696",
@@ -1037,11 +971,10 @@
       "limitNote": "无限制",
       "oneYearReturn": 23.37,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-29 22:29",
+      "lastUpdated": "2026-06-29T21:07:03.622Z",
       "netValue": 1.8425,
-      "estimatedValue": 1.8478,
-      "estimatedChange": 0.29,
-      "rate": 0.29
+      "estimatedChange": null,
+      "rate": null
     },
     {
       "id": "159941",
@@ -1051,11 +984,10 @@
       "limitNote": "无限制",
       "oneYearReturn": 22.61,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-29 22:29",
+      "lastUpdated": "2026-06-29T21:07:03.622Z",
       "netValue": 1.4844,
-      "estimatedValue": 1.4886,
-      "estimatedChange": 0.29,
-      "rate": 0.29
+      "estimatedChange": null,
+      "rate": null
     },
     {
       "id": "160213",
@@ -1065,11 +997,10 @@
       "limitNote": "暂停申购",
       "oneYearReturn": 22.77,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-29 22:29",
+      "lastUpdated": "2026-06-29T21:07:03.622Z",
       "netValue": 4.438,
-      "estimatedValue": 4.4507,
-      "estimatedChange": 0.29,
-      "rate": 0.29
+      "estimatedChange": null,
+      "rate": null
     },
     {
       "id": "161130",
@@ -1079,11 +1010,10 @@
       "limitNote": "暂停申购",
       "oneYearReturn": 21.28,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-29 22:29",
+      "lastUpdated": "2026-06-29T21:07:03.622Z",
       "netValue": 4.4093,
-      "estimatedValue": 4.4219,
-      "estimatedChange": 0.29,
-      "rate": 0.29
+      "estimatedChange": null,
+      "rate": null
     },
     {
       "id": "270042",
@@ -1094,11 +1024,10 @@
       "limitNote": "单日限额 10 元",
       "oneYearReturn": 21.91,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-29 22:29",
+      "lastUpdated": "2026-06-29T21:07:03.622Z",
       "netValue": 8.1427,
-      "estimatedValue": 8.166,
-      "estimatedChange": 0.29,
-      "rate": 0.29
+      "estimatedChange": null,
+      "rate": null
     },
     {
       "id": "513100",
@@ -1108,11 +1037,10 @@
       "limitNote": "暂停申购",
       "oneYearReturn": 22.99,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-29 22:29",
+      "lastUpdated": "2026-06-29T21:07:03.622Z",
       "netValue": 1.9801,
-      "estimatedValue": 1.9858,
-      "estimatedChange": 0.29,
-      "rate": 0.29
+      "estimatedChange": null,
+      "rate": null
     },
     {
       "id": "513110",
@@ -1122,11 +1050,10 @@
       "limitNote": "无限制",
       "oneYearReturn": 22.55,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-29 22:29",
+      "lastUpdated": "2026-06-29T21:07:03.622Z",
       "netValue": 2.274,
-      "estimatedValue": 2.2805,
-      "estimatedChange": 0.29,
-      "rate": 0.29
+      "estimatedChange": null,
+      "rate": null
     },
     {
       "id": "513290",
@@ -1136,11 +1063,10 @@
       "limitNote": "无限制",
       "oneYearReturn": 44.07,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-29 22:29",
+      "lastUpdated": "2026-06-29T21:07:03.622Z",
       "netValue": 1.5964,
-      "estimatedValue": 1.6059,
-      "estimatedChange": 0.59,
-      "rate": 0.59
+      "estimatedChange": null,
+      "rate": null
     },
     {
       "id": "513300",
@@ -1150,11 +1076,10 @@
       "limitNote": "无限制",
       "oneYearReturn": 22.72,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-29 22:29",
+      "lastUpdated": "2026-06-29T21:07:03.622Z",
       "netValue": 2.4677,
-      "estimatedValue": 2.4748,
-      "estimatedChange": 0.29,
-      "rate": 0.29
+      "estimatedChange": null,
+      "rate": null
     },
     {
       "id": "513390",
@@ -1164,11 +1089,10 @@
       "limitNote": "暂停申购",
       "oneYearReturn": 23.08,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-29 22:29",
+      "lastUpdated": "2026-06-29T21:07:03.622Z",
       "netValue": 2.2208,
-      "estimatedValue": 2.2271,
-      "estimatedChange": 0.29,
-      "rate": 0.29
+      "estimatedChange": null,
+      "rate": null
     },
     {
       "id": "513870",
@@ -1178,11 +1102,10 @@
       "limitNote": "无限制",
       "oneYearReturn": 23.3,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-29 22:29",
+      "lastUpdated": "2026-06-29T21:07:03.622Z",
       "netValue": 1.8855,
-      "estimatedValue": 1.8909,
-      "estimatedChange": 0.29,
-      "rate": 0.29
+      "estimatedChange": null,
+      "rate": null
     },
     {
       "id": "539001",
@@ -1193,14 +1116,13 @@
       "limitNote": "单日限额 100 元",
       "oneYearReturn": 20.86,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-29 22:29",
+      "lastUpdated": "2026-06-29T21:07:03.622Z",
       "netValue": 3.4236,
-      "estimatedValue": 3.4334,
-      "estimatedChange": 0.29,
-      "rate": 0.29
+      "estimatedChange": null,
+      "rate": null
     }
   ],
-  "lastUpdated": "2026-06-29T19:02:39.511Z",
+  "lastUpdated": "2026-06-29T21:07:03.622Z",
   "discoveredCount": 84,
   "source": "crawl"
 }
