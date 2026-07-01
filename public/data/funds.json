@@ -438,7 +438,7 @@
       "limitNote": "单日限额 100 元",
       "oneYearReturn": 42.72,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-30T23:12:54.974Z",
+      "lastUpdated": "2026-07-01T01:38:41.091Z",
       "netValue": 1.5128,
       "estimatedChange": null,
       "rate": null
@@ -452,7 +452,7 @@
       "limitNote": "单日限额 100 元",
       "oneYearReturn": 42.36,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-30T23:12:54.974Z",
+      "lastUpdated": "2026-07-01T01:38:41.091Z",
       "netValue": 1.5013,
       "estimatedChange": null,
       "rate": null
@@ -465,7 +465,7 @@
       "limitNote": "暂停申购",
       "oneYearReturn": 49.91,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-30T23:12:54.974Z",
+      "lastUpdated": "2026-07-01T01:38:41.091Z",
       "netValue": 1.5321,
       "estimatedChange": null,
       "rate": null
@@ -478,7 +478,7 @@
       "limitNote": "暂停申购",
       "oneYearReturn": 49.91,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-30T23:12:54.974Z",
+      "lastUpdated": "2026-07-01T01:38:41.091Z",
       "netValue": 1.5321,
       "estimatedChange": null,
       "rate": null
@@ -769,7 +769,7 @@
       "limitNote": "无限制",
       "oneYearReturn": 0,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-30T23:12:54.974Z",
+      "lastUpdated": "2026-07-01T01:38:41.091Z",
       "netValue": null,
       "estimatedChange": null,
       "rate": null
@@ -782,7 +782,7 @@
       "limitNote": "无限制",
       "oneYearReturn": 0,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-06-30T23:12:54.974Z",
+      "lastUpdated": "2026-07-01T01:38:41.091Z",
       "netValue": null,
       "estimatedChange": null,
       "rate": null
@@ -1160,8 +1160,8 @@
       "id": "513390",
       "code": "513390",
       "name": "纳指100ETF博时",
-      "limitStatus": "suspended",
-      "limitNote": "暂停申购",
+      "limitStatus": "unlimited",
+      "limitNote": "无限制",
       "oneYearReturn": 25.38,
       "fundType": "指数型-海外股票",
       "lastUpdated": "2026-07-01 04:00",
@@ -1200,7 +1200,7 @@
       "rate": 1.6
     }
   ],
-  "lastUpdated": "2026-06-30T23:12:54.974Z",
+  "lastUpdated": "2026-07-01T01:38:41.091Z",
   "discoveredCount": 84,
   "source": "crawl"
 }
