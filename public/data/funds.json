@@ -438,7 +438,7 @@
       "limitNote": "单日限额 100 元",
       "oneYearReturn": 42.77,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-07-06T18:25:43.738Z",
+      "lastUpdated": "2026-07-06T20:22:20.551Z",
       "netValue": 1.5529,
       "estimatedChange": null,
       "rate": null
@@ -452,7 +452,7 @@
       "limitNote": "单日限额 100 元",
       "oneYearReturn": 42.41,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-07-06T18:25:43.738Z",
+      "lastUpdated": "2026-07-06T20:22:20.551Z",
       "netValue": 1.541,
       "estimatedChange": null,
       "rate": null
@@ -465,7 +465,7 @@
       "limitNote": "暂停申购",
       "oneYearReturn": 50.01,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-07-06T18:25:43.738Z",
+      "lastUpdated": "2026-07-06T20:22:20.551Z",
       "netValue": 1.5756,
       "estimatedChange": null,
       "rate": null
@@ -478,7 +478,7 @@
       "limitNote": "暂停申购",
       "oneYearReturn": 50.01,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-07-06T18:25:43.738Z",
+      "lastUpdated": "2026-07-06T20:22:20.551Z",
       "netValue": 1.5756,
       "estimatedChange": null,
       "rate": null
@@ -769,7 +769,7 @@
       "limitNote": "无限制",
       "oneYearReturn": 0,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-07-06T18:25:43.738Z",
+      "lastUpdated": "2026-07-06T20:22:20.551Z",
       "netValue": null,
       "estimatedChange": null,
       "rate": null
@@ -782,7 +782,7 @@
       "limitNote": "无限制",
       "oneYearReturn": 0,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-07-06T18:25:43.738Z",
+      "lastUpdated": "2026-07-06T20:22:20.551Z",
       "netValue": null,
       "estimatedChange": null,
       "rate": null
@@ -880,7 +880,7 @@
       "limitStatus": "limited",
       "limitAmount": 100,
       "limitNote": "单日限额 100 元",
-      "oneYearReturn": 20.29,
+      "oneYearReturn": 19.24,
       "fundType": "指数型-海外股票",
       "lastUpdated": "2026-07-06 22:29",
       "netValue": 3.3455,
@@ -1200,7 +1200,7 @@
       "rate": 1.44
     }
   ],
-  "lastUpdated": "2026-07-06T18:25:43.738Z",
+  "lastUpdated": "2026-07-06T20:22:20.551Z",
   "discoveredCount": 84,
   "source": "crawl"
 }
