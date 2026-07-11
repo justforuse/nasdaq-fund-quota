@@ -438,7 +438,7 @@
       "limitNote": "单日限额 100 元",
       "oneYearReturn": 40.98,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-07-11T00:03:32.630Z",
+      "lastUpdated": "2026-07-11T03:50:37.095Z",
       "netValue": 1.5644,
       "estimatedChange": null,
       "rate": null
@@ -452,7 +452,7 @@
       "limitNote": "单日限额 100 元",
       "oneYearReturn": 40.62,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-07-11T00:03:32.630Z",
+      "lastUpdated": "2026-07-11T03:50:37.096Z",
       "netValue": 1.5524,
       "estimatedChange": null,
       "rate": null
@@ -465,7 +465,7 @@
       "limitNote": "暂停申购",
       "oneYearReturn": 48.19,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-07-11T00:03:32.630Z",
+      "lastUpdated": "2026-07-11T03:50:37.096Z",
       "netValue": 1.5876,
       "estimatedChange": null,
       "rate": null
@@ -478,7 +478,7 @@
       "limitNote": "暂停申购",
       "oneYearReturn": 48.19,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-07-11T00:03:32.630Z",
+      "lastUpdated": "2026-07-11T03:50:37.096Z",
       "netValue": 1.5876,
       "estimatedChange": null,
       "rate": null
@@ -769,7 +769,7 @@
       "limitNote": "无限制",
       "oneYearReturn": 0,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-07-11T00:03:32.630Z",
+      "lastUpdated": "2026-07-11T03:50:37.096Z",
       "netValue": null,
       "estimatedChange": null,
       "rate": null
@@ -782,7 +782,7 @@
       "limitNote": "无限制",
       "oneYearReturn": 0,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-07-11T00:03:32.630Z",
+      "lastUpdated": "2026-07-11T03:50:37.096Z",
       "netValue": null,
       "estimatedChange": null,
       "rate": null
@@ -1010,8 +1010,8 @@
       "oneYearReturn": 23.64,
       "fundType": "指数型-海外股票",
       "lastUpdated": "2026-07-11 04:00",
-      "netValue": 2.1445,
-      "estimatedValue": 2.1512,
+      "netValue": 2.1779,
+      "estimatedValue": 2.1847,
       "estimatedChange": 0.31,
       "rate": 0.31
     },
@@ -1200,7 +1200,7 @@
       "rate": 0.31
     }
   ],
-  "lastUpdated": "2026-07-11T00:03:32.630Z",
+  "lastUpdated": "2026-07-11T03:50:37.096Z",
   "discoveredCount": 84,
   "source": "crawl"
 }
