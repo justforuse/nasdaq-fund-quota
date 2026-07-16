@@ -438,8 +438,8 @@
       "limitNote": "单日限额 100 元",
       "oneYearReturn": 34.37,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-07-16T10:03:42.521Z",
-      "netValue": 1.4969,
+      "lastUpdated": "2026-07-16T11:59:53.217Z",
+      "netValue": 1.5057,
       "estimatedChange": null,
       "rate": null
     },
@@ -452,8 +452,8 @@
       "limitNote": "单日限额 100 元",
       "oneYearReturn": 34.04,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-07-16T10:03:42.521Z",
-      "netValue": 1.4853,
+      "lastUpdated": "2026-07-16T11:59:53.217Z",
+      "netValue": 1.4941,
       "estimatedChange": null,
       "rate": null
     },
@@ -465,8 +465,8 @@
       "limitNote": "暂停申购",
       "oneYearReturn": 41.25,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-07-16T10:03:42.521Z",
-      "netValue": 1.52,
+      "lastUpdated": "2026-07-16T11:59:53.217Z",
+      "netValue": 1.5308,
       "estimatedChange": null,
       "rate": null
     },
@@ -478,8 +478,8 @@
       "limitNote": "暂停申购",
       "oneYearReturn": 41.25,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-07-16T10:03:42.521Z",
-      "netValue": 1.52,
+      "lastUpdated": "2026-07-16T11:59:53.217Z",
+      "netValue": 1.5308,
       "estimatedChange": null,
       "rate": null
     },
@@ -769,7 +769,7 @@
       "limitNote": "无限制",
       "oneYearReturn": 0,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-07-16T10:03:42.521Z",
+      "lastUpdated": "2026-07-16T11:59:53.217Z",
       "netValue": null,
       "estimatedChange": null,
       "rate": null
@@ -782,7 +782,7 @@
       "limitNote": "无限制",
       "oneYearReturn": 0,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-07-16T10:03:42.521Z",
+      "lastUpdated": "2026-07-16T11:59:53.217Z",
       "netValue": null,
       "estimatedChange": null,
       "rate": null
@@ -1200,7 +1200,7 @@
       "rate": -0.27
     }
   ],
-  "lastUpdated": "2026-07-16T10:03:42.521Z",
+  "lastUpdated": "2026-07-16T11:59:53.218Z",
   "discoveredCount": 84,
   "source": "crawl"
 }
