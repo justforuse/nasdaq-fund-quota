@@ -406,7 +406,7 @@
       "limitStatus": "limited",
       "limitAmount": 1000,
       "limitNote": "单日限额 1,000 元",
-      "oneYearReturn": 13.4,
+      "oneYearReturn": 10.76,
       "fundType": "QDII-普通股票",
       "lastUpdated": "2026-07-17 04:00",
       "netValue": 2.2899,
@@ -421,7 +421,7 @@
       "limitStatus": "limited",
       "limitAmount": 1000,
       "limitNote": "单日限额 1,000 元",
-      "oneYearReturn": 12.95,
+      "oneYearReturn": 10.32,
       "fundType": "QDII-普通股票",
       "lastUpdated": "2026-07-17 04:00",
       "netValue": 2.2612,
@@ -438,7 +438,7 @@
       "limitNote": "单日限额 100 元",
       "oneYearReturn": 37.94,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-07-17T06:35:59.760Z",
+      "lastUpdated": "2026-07-17T09:06:19.144Z",
       "netValue": 1.5057,
       "estimatedChange": null,
       "rate": null
@@ -452,7 +452,7 @@
       "limitNote": "单日限额 100 元",
       "oneYearReturn": 37.59,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-07-17T06:35:59.760Z",
+      "lastUpdated": "2026-07-17T09:06:19.144Z",
       "netValue": 1.4941,
       "estimatedChange": null,
       "rate": null
@@ -465,7 +465,7 @@
       "limitNote": "暂停申购",
       "oneYearReturn": 45.18,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-07-17T06:35:59.760Z",
+      "lastUpdated": "2026-07-17T09:06:19.144Z",
       "netValue": 1.5308,
       "estimatedChange": null,
       "rate": null
@@ -478,7 +478,7 @@
       "limitNote": "暂停申购",
       "oneYearReturn": 45.18,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-07-17T06:35:59.760Z",
+      "lastUpdated": "2026-07-17T09:06:19.144Z",
       "netValue": 1.5308,
       "estimatedChange": null,
       "rate": null
@@ -769,7 +769,7 @@
       "limitNote": "无限制",
       "oneYearReturn": 0,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-07-17T06:35:59.760Z",
+      "lastUpdated": "2026-07-17T09:06:19.144Z",
       "netValue": null,
       "estimatedChange": null,
       "rate": null
@@ -782,7 +782,7 @@
       "limitNote": "无限制",
       "oneYearReturn": 0,
       "fundType": "指数型-海外股票",
-      "lastUpdated": "2026-07-17T06:35:59.760Z",
+      "lastUpdated": "2026-07-17T09:06:19.144Z",
       "netValue": null,
       "estimatedChange": null,
       "rate": null
@@ -1035,7 +1035,7 @@
       "name": "纳指ETF易方达",
       "limitStatus": "unlimited",
       "limitNote": "无限制",
-      "oneYearReturn": 22.35,
+      "oneYearReturn": 20.2,
       "fundType": "指数型-海外股票",
       "lastUpdated": "2026-07-17 04:00",
       "netValue": 1.8596,
@@ -1077,7 +1077,7 @@
       "name": "易方达纳斯达克100ETF联接(QDII-LOF)A(人民币)",
       "limitStatus": "suspended",
       "limitNote": "暂停申购",
-      "oneYearReturn": 20.38,
+      "oneYearReturn": 18.38,
       "fundType": "指数型-海外股票",
       "lastUpdated": "2026-07-17 04:00",
       "netValue": 4.4496,
@@ -1200,7 +1200,7 @@
       "rate": -1.54
     }
   ],
-  "lastUpdated": "2026-07-17T06:35:59.760Z",
+  "lastUpdated": "2026-07-17T09:06:19.144Z",
   "discoveredCount": 84,
   "source": "crawl"
 }
